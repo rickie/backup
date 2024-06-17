@@ -1,0 +1,13 @@
+- `PreferredInterfaceType` [link](https://github.com/PicnicSupermarket/picnic-rule-engine/pull/1129#discussion_r909255130).
+-
+- Optional x @Nullable and Concrete vs SuperType (`PreferredInterfaceType`)
+	- https://github.com/PicnicSupermarket/picnic-wms/pull/2768#issuecomment-1169674615
+-
+- `Optional#get()` vs `Optional#orElseThrow()` [link](https://github.com/PicnicSupermarket/picnic-pom/pull/1809#pullrequestreview-833805170).
+-
+- `isZero()` -> `isEqualTo(0)` [link](https://github.com/PicnicSupermarket/picnic-payments/pull/1924#discussion_r974000469).
+-
+- [TimeZoneUsage](https://teampicnic.slack.com/archives/C03MH41KVJ8/p1668776232427539?thread_ts=1668774264.081719&cid=C03MH41KVJ8)
+-
+- `var` usage: https://teampicnic.slack.com/archives/CTPLDMUG6/p1653490247214129.
+-

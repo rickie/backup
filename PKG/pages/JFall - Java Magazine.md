@@ -1,0 +1,113 @@
+- #error-prone-support
+- #Talks
+-
+- Alfresco.
+-
+- ## Abstract article 1
+- Enter the world of Error Prone, a static analysis tool for detecting and preventing bugs and anti-patterns in Java codebases. Google open-sourced this in 2012, providing a compiler plugin that not only points out issues but also suggests and applies fixes on a large scale.
+-
+- Out of the box 500+ bug patterns are provided to enhance your code effortlessly. Alongside this Error Prone provides a tool called Refaster, offering a templating DSL for specifying refactoring operations using before and after templates. The DSL uses regular Java code, which makes it a breeze for any Java developer to define refactorings.
+-
+- Both tools open the door for creating custom rules, which proves to be a valuable asset when tackling a range of issues. Whether it's migrating deprecated APIs, tackling common gotchas, enhancing code style, shifting to different libraries, or automatically clearing technical debt, these rules work tirelessly to upgrade your codebase, saving time and manual effort.
+-
+- In this article, we delve into the inner workings of Error Prone and explore its extensibility through plugins like NullAway and Error Prone Support. Join us as we uncover the magic behind automating code improvements.
+-
+-
+- For both tools its possible to write your own rules. This is helpful as they can help with many different issues. For example, migrate deprecated APIs, fix common gotchas or bugs, improve code style, migrate to different libraries or automatically remove technical debt. This all helps to automatically improve your codebase and save manual time . Also dooing it manually is more easy to make mistakes.
+-
+- In this article, we delve into the inner workings of Error Prone and explore its extensibility through plugins like NullAway and Error Prone Support. Join us as we uncover the magic behind automating code improvement.
+-
+- It's possible to create your own Error Prone checks or Refaster rules. Both tools can automatically fix code style issues, migrate deprecated APIs to new APIs, fix bugs automatically, migrate to different libraries, technical deb.
+-
+- Introducing a tool like this on your codebase is not easy. Many changes will be introduced, but it's also a cultural change. Doesn't make it easy to get everyone on board. You need to approach it in a smart way.
+-
+-
+-
+-
+-
+- Its checks use an abstract tree representation of the code to perform the analysis. During this analysis the information about the actual source code is available as well. This allows Error Prone to automatically suggest and applying these fixes at scale.
+-
+- Error Prone is a compiler plugin. Can catch bugs during compilation, so before they enter our codebase.
+-
+- Error Prone Provides many bug patterns out of the box.
+-
+-
+-
+- Finally we'll dive into Error Prone's extensibility through plugins like NullAway and Error Prone Support.
+-
+- # New chat 21-12-23
+- Wat is Error Prone?
+- Hoe werkt het?
+- Hoe integreer je het?
+- Why do we need it?
+- Caveats.
+- Hoe begin je met introduceren.
+- Het is een uitbreidbaar systeem, je kunt plugins gebruiken,
+- Error Prone Support, Die andere mensen die het hebben, NullAway
+- Je kunt ook zelf aan de gang.
+-
+- Niet meer dan 2000 woorden.
+-
+-
+- ## Final abstract article 2
+- Error Prone, a static analysis tool we are heavily using at Picnic for years already, goes beyond just spotting bugs — it fixes them automatically. Our journey started with contributing simple fixes, evolving into an open-source repository with various plugins. These plugins run custom checks on your code during the build, making your code better by catching bugs, improving style, and following common coding guidelines. Using and extending this results in an ever more consistent and improving code quality. The checks will run on the machines of all developers for all builds. (XXX: how do we add this sentence, or should we drop:) This automation streamlines part of the code review process.
+- Developing such a high impact tool also means dealing with responsibilities and challenges. Incorrect changes or compatibility issues can disrupt developers, indicating the importance of accurate and valid refactoring suggestions.
+- Creating the plugin itself is not easy. Integrating against the Java Compiler and relying on an unsupported and scarcely documented API makes development and debugging tough. The average developer will never interact with these uncommon APIs. Plus, since our plugin is open source, it needs to be compatible with various Java versions and be able to run on any codebase. This calls for rigorous testing and validation to ensure the plugin is correct in all situations.
+- Beyond the continued development, as maintainers we need to think about the adoption and usability of the plugin. As adoption requires a shift in the culture of the developers of the project, it's not easy to get a company to adopt this tool. To ease adoption we need to provide extensive documentation and configurability of the tool to minimize friction.
+-
+- (can now mention our collab with OpenRewrite!)
+-
+- (are not generally known, average dev never interacts with this, uncommon. less support)any kind of code. **any project/codebase**
+- Shift of culture of the company that starts to adopt, important as  maintainers that are valuable, and minimize friction. Users.
+- Beyond the continued development, getting others involved is vital. Encouraging people to use and contribute to the project, especially when it affects a codebase significantly, requires a bit of a culture shift. Responsively handling issues, collaborating on feature requests, and giving constructive code reviews all play a role in the project's growth. This abstract sums up our experience with Error Prone, highlighting its benefits for our development and the challenges we tackle to keep it working smoothly.
+-
+-
+- ## Content
+- Error Prone is a compile time static analysis tool that can find _and_ automatically fix bugs. We started using this extensively within Picnic a few years ago. What started with contributing simple fixes upstream resulted in a open source repository that contains multiple plugins on top of Error Prone. Many custom rules run as part of the build on the machines of hundreds of developers.
+-
+- With this setup we can have significant impact on code consistency, quality and safe developers time by catching common mistakes. This also comes with responsibilities and some interesting challenges. Performing incorrect refactorings or having incompatibilities can impact the flow of developers. Therefore the correctness of the suggestions is important.
+-
+- Developing the plugin itself isn't easy. The tool integrates with the Java Compiler and uses an unsupported, and scarcely documented API, which makes debugging in the Java Compiler quite hard. Additionally, many people can use the plugin as it is open source. This requires being compatible with multiple JDK runtimes and being able to run on almost all code. To validate these things an extensive testing and validation process is required.
+-
+- runs directly after the regular compilation finished such that we can use this additional context that is available. Additionally, the API
+-
+- Thing in bigger context.
+- Dealing with upstream. Maintainers can be slow, mainaining a fork to make it compatible with our own builds.
+- Unsupported API.
+- Versions of new Java support, supporting a wide variety of JDKs.
+-
+- Validation of changes; we build a integration testing framework.
+- Automation
+- High quality.
+-
+- What is different from other projects?
+	- Impact can be  really high, so you need to be really sure about how to approach it.
+	- Validation.
+	- Need to be on top of things.
+	- A contribution needs serious amounts of hours to review. A slow thing or incorrect one can have significant impact on build time and usability.
+	- Correctness.
+	- Your project runs on every machine and analysis the code.
+-
+-
+- Hoe start je er mee, wat zijn beperkingen.
+- Hoe krijg je het werkend in zo'n context? Als je aan het testen bent op je plugin zelf.
+- Wat is er zo anders?
+- Wat is nou ook hetzelfde?
+- Om een plugin van een applicatie te schrijven.
+-
+- Hoe test je het nou?
+- Hoe interacteer je ermee?
+- Jouw foutjes de hele applicatie onderuit trekken.
+- Vooral in onze context.
+-
+- Hoe we werken met EP maintainers. Hoe er mee om te gaan?
+-
+-
+-
+- Pagina's, 500 woorden per pagina. 4 paginas.
+- Tijdlijn.
+- Eerste is eind december.
+-
+-
+- ### STuff that I removed but want to backup
+-

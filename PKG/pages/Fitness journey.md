@@ -1,0 +1,33 @@
+-
+- Questions Suus:
+-
+- Hoeveel trainingsdagen? Zijn er vaste dagen?
+	- 2 wat uitgebreidere sessies
+	- 2 wat kortere sessies
+	- In principe niet per se vaste dagen; maar vaker doordeweeks dan in het weekend omdat ik dan minder vaak thuis ben.
+- ⁠Hoeveel tijd heb je per sessie?
+	- Het is in principe relatief flexibel, maar het liefst voor de langere rond 1 uur to 1 uur en een kwartier.
+	- De kortere sessies tussen de 15 en 30 minuten.
+	- Ik moet wel zeggen dat ik supersets wel nice vind om te doen zodat ik de tijd dat ik iets doe wel echt maximaal kan besteden. Het idee van m'n thuis gym is dat ik qua tijd spendering het wat kan minimaliseren door geen reistijd e.d. te hebben en het heel makkelijk voor mezelf maak om een work out te gaan doen.
+- ⁠Wat is je exacte doel als je dat zou kunnen omschrijven? Hoe specifieker hoe beter
+	- Ik heb vaak te horen gekregen dat ik wel een bouw heb wat goed kan groeien als ik zou fitnessen. Het lijkt me leuk om dit een keer wat serieuzer te gaan proberen.
+	- Daarnaast vind ik het gewoon heel nice om te sporten en m'n lichaam een beetje uit te dagen. Wat ik nice vind aan de dingen die ik heb gekocht zoals pull up bar is dat ik m'n lichaam relatief snel goed kan uitdagen en vermoeien.
+	- Het is natuurlijk ook nice om er goed uit te zien en de spieren wat groter te maken zodat ik er in shape uit zie en lekker fit ben. Dus m'n doel is om ook echt wel naar iets toe te werken waar je wel kan zien dat ik hier mee bezig ben. Daarom wil ik ook wat focussen op de abs zodat het bovenlichaam ook meer in shape komt en ik er gewoon fit uitzie.
+- ⁠Wat is je huidige trainingsroutine? Hoeveel sets per week per spiergroep?
+	- Ik zal je een screenshot sturen van de sets die ik nu ongeveer 2 keer per week deed.
+	- Daarnaast doe ik nog 2x per week een dag waarop ik pull ups, chin ups, in de ringen hang (oefenen om dips te kunnen), en buikspier oefening. Deze 4 dingen doe ik dan 3 keer.
+- ⁠Wil je zowel boven- als onderlichaam trainen? Want ik lees alleen iets over push/pull/abs?
+	- Aangezien ik al vrij veel aan hockey en squash doe was ik niet van plan m'n onderlichaam te trainen thuis. Ik weet niet hoe jij hier over denkt? :)
+- ⁠Wat doe je naast de home workouts nog meer aan fysieke activiteiten?
+	- 2x per week hockey, op donderdag en zondag, een training en hockey waar ik ook nog eens 2x half uur naar toe moeten fietsen. Squash sessie 1x in de week op woensdag of maandag.
+- ⁠Hoeveel uur slaap je per nacht?
+	- 7.5 uur - 8 uur.
+- ⁠Hoeveel glazen alcohol per week?
+	- Verschilt flink per week, maar wss tussen de 6-12 per week? Als ik feestje heb schiet het wat wat sneller naar de 12 bijvoorbeeld.
+- ⁠Gebruik je supplementen?
+	- Ik gebruik proteine poeder, 1 scoop per dag.
+	- Ik heb recent met Floris creatine gekocht, maar nog niet aan het gebruiken. Ben wel benieuwd naar je input op of ik dit het beste kan gaan doen of niet.
+- ⁠Heb je blessures?
+	- Momenteel een blessure aan m'n knie omdat ik een ski ongelukje had. Maar dat is over 2 weken weer herstelt en is niet echt relevant denk ik haha.
+-
+-

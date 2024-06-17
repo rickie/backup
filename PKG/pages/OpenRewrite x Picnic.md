@@ -1,0 +1,67 @@
+- #Picnic
+- #error-prone-support
+- #OpenRewrite
+-
+- ## Command om Error Prone Contrib te draaien als recipe stuff
+- ```
+  fast && mvn org.openrewrite.maven:rewrite-maven-plugin:run \
+    -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes \
+    -Drewrite.recipeArtifactCoordinates=tech.picnic.error-prone-support:error-prone-contrib:0.14.1-SNAPSHOT,org.openrewrite:rewrite-templating:LATEST
+  ```
+-
+-
+- OpenRewrite
+	- What is OpenRewrite?
+	- What is the Moderne platform?
+	- What makes OR powerful?
+	- How do companies use it?
+	- What are features of the platform?
+-
+- Picnic / Error Prone Support
+	- Briefly(?) discuss Error Prone Support and any related questions.
+	- Interesting to share: Self-check; Pitest.
+	- Run Error Prone at scale
+	- What SAST do we use? ==> Rapid7.
+	- Do we use Error Prone / Refaster like tools for Python?
+-
+- OpenRewrite <> Error Prone (Support)
+	- Differences and similarities
+-
+- Community
+	- How do you engage with your community?
+	- How does the GH Community Board work for you?
+	- Are there advantages/disadvantages to being engaged with the community?
+	- What do you do people contributing things that you do not like or are not a clear improvement?
+-
+- Future plans
+	- Do you have any future plans or goals that you want or can share?
+	- How to get the best of both worlds with OpenRewrite and ErrorProne?
+- ---
+- Introduction;
+	- Goal:
+		- Exchange ideas; experiences.
+		- Maybe we can learn from each other.
+-
+- ---
+- Push towards the companies itself.
+- Big connections.
+-
+-
+- # Meeting 10 May with all of them
+- Just a recap of the next steps: [link](https://teampicnic.slack.com/archives/C052V0N04P9/p1683731028662229).
+- Create a PR in the error-prone-support repository with the openrewrite annotation processor. Then, you can decide when to experiment and add the missing features in the [https://github.com/openrewrite/rewrite-templating](https://github.com/openrewrite/rewrite-templating). We are going to disable all the features that are not supported to prevent undesired behaviors.
+- Follow up for next week?
+-
+- In addition to her summary:
+- Their Refaster rule to Recipe converter (annotation processor) is in a *very* POC like state. It only has support for the most simple Refaster rule(s).
+- Oh and they need to support Java 8 still.
+- They will create a PR in EPS once they have something nice that we can use. That allows us and them to see what their progress is. They'll be able to use our huge amount of tests to determine there coverage.
+- As a result our EPS work has another advantage for "the OSS world".
+- This could lead to more traffic and more people using Error Prone Support.
+- Potentially people start to create Refaster rules in our repository which would be available for both OR and EP users.
+- We are most likely able to use their platform (Probably they mean *only *their "free OSS" part of their platform).
+- I'd say that ideally we would be able to run Refaster rules on our own internal stuff. However, this now requires ![:money_rain:](https://emoji.slack-edge.com/T03VA12SN/money_rain/f06bc3a033ec5686.gif). Maybe if we can be helpful and "work together with them" we might be able to get this for a reduced amount?
+- Anyways, this can save us time as we can directly assess impact of Refaster rules on a large scale.
+- They seem enthusiastic about collaborating on this and making this bridge between Refaster and their platform work.
+- I felt they tried to get us to contribute to their Refaster bridge, but we said we are willing to help out with being the bridge and incorporate the bridge they would build but not necessarily actively building it ourselves. We have other things in EPS itself that we want to focus on.I think this covers almost all of it.
+-

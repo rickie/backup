@@ -1,0 +1,232 @@
+- Doing the following:
+  :LOGBOOK:
+  CLOCK: [2022-05-17 Tue 11:37:50]--[2022-05-17 Tue 11:37:53] =>  00:00:03
+  CLOCK: [2022-05-17 Tue 11:37:54]--[2022-05-17 Tue 11:37:54] =>  00:00:00
+  :END:
+- {{query [[DOING]] }}
+  query-table:: false
+-
+- TODO Consent topic oppakken met Penny en Barbara
+- TODO Ask Penny to run query for checking how often people place comments on private static final stuff. Related to Ben's PR.
+-
+- Memory leak.
+- TODO SLO for rule engine with executing
+-
+- DONE Investigate  and estimate article issues.
+  :LOGBOOK:
+  CLOCK: [2024-02-14 Wed 14:55:42]--[2024-02-14 Wed 16:51:32] =>  01:55:50
+  CLOCK: [2024-02-15 Thu 11:12:13]--[2024-02-19 Mon 14:13:01] =>  99:00:48
+  :END:
+- DONE CReate calendar
+- DONE Check out Renovate authproxy stuff
+- DONE Response Dinis
+- DONE Write message to Frontendies.
+- DONE L3
+- DONE Check with frontendies when API got initializei. When exactly does it get initialized.
+	- ~~Monthly active users; metric was high and approaching limit; going over the limit. Whe nintializing, open the app; anyone opening it would count, or after the customer signs in.~~
+	- ~~Is SDK enabled for development apps;~~
+- DONE Dirk's PR
+- DONE Stephan's PRs.
+- DONE ArchUnit: No Stream.
+- DONE BRaze retry log.
+- DONE Authentication --> Now have a PR
+  :LOGBOOK:
+  CLOCK: [2024-02-22 Thu 12:45:44]--[2024-02-28 Wed 10:40:15] =>  141:54:31
+  :END:
+- DONE Reach out to Platform about the changes we want to make.
+- DONE Update Jira ticket | Update ticket with progress of where we are.'
+- DONE Datadog SLO
+	- ~~Ask Penny for input~~
+	- ~~Create actual implementation~~
+	- ~~File a COMM PR and for the proxy.~~
+- DONE Reminder for updating sheet as lead for Steffen
+- DONE Rebase gijs PR
+- TODO File PR for more permission things.
+- DONE Change time of Renovate for automerge.
+- DONE Create tickets for next week tech safari
+- DONE Ask Frontendies about the 2k expired token error.
+  :LOGBOOK:
+  CLOCK: [2024-02-20 Tue 16:29:45]--[2024-02-21 Wed 17:23:05] =>  24:53:20
+  :END:
+- DONE Fix the APP IDs in the extractor.
+- DONE Better insight into what /how often we update.
+	- ~~Intercept the braze user track request. Inspect unique keys.~~
+- DONE Fix EPS stuff for Gijs.
+- DONE Fix: https://github.com/PicnicSupermarket/picnic-platform/pull/11133
+- TODO Contact Braze to do a request for API improvement. Thread in Slack.
+  :LOGBOOK:
+  CLOCK: [2024-03-18 Mon 14:56:47]--[2024-03-18 Mon 14:56:49] =>  00:00:02
+  :END:
+- DONE Ticket for Calcaite support
+- DONE Limit the amount of PRs for AWS SDK.
+- DONE Dependency stuff: https://picnic.atlassian.net/wiki/spaces/TAR/pages/4483874964/Dependency+Upgrades
+- TODO ArchUnit in
+	- ADS
+	- COMM
+	- RULE
+	- VINCENT Z"N ding
+- TODO OpenRewrite
+	- Iterables.getLast(events) --> events.getLast()
+	- Optional Case Java 17 Braze upgrade
+-
+- DONE `AlreadyClosedException` fix that in PSM itself.
+- TODO Icons .svg's RE and ADS.
+-
+- DONE Already Closed Exception [link](https://teampicnic.slack.com/archives/C0608KZJGC9/p1715330026252079)
+- TODO RFC for budget!
+-
+- DONE Two tickets for the migration
+- DONE Ask Joachim about the receipt changes that are required.
+- DOING Terug komen op Picnic wide Refaster rules;
+  :LOGBOOK:
+  CLOCK: [2024-03-18 Mon 14:56:11]
+  :END:
+- TODO Move `json-support` from Store to PSM
+- TODO Checkstyle
+	- IdentityConversion
+	- ImmutableSortedSetComparator
+	-
+- Extra notes
+	- every module can have a refaster module; would be auto loaded as part of it.
+	- Have renovate figure out a change is in a `refaster` module, so we handle it differentlyt
+	- they come out of the box. but dependencies are really hard.
+	-
+	- so we have three things:
+		- OSS
+		- PSM
+		- Repository wide.
+	-
+	- We should lower the barrier.
+	-
+	- Stephan mentions having EPS contrib module is better. Otherwise we would need to add many things to the annotatino processor path.
+	- So Refaster doesn't require the actual dependencies to be there.
+	- It will check if textually it matches and then match.
+	- We don't run `.patch.sh` anymore. So that situation is not so ideal. If someone runs patch it will show it..
+	- For now InlineMe covers part of the cases. We want to have this out of scope for now
+	-
+	- Small class in user service. Handler of DevicePushTopic event.
+	- UserDetails EventHandler
+	- @Header String deviceId in the endpoint
+	- One layer higher in  `provideGeneralConsentDeclaration`.
+	- Instead of eventhandler.
+	- ```
+	  // XXX: Drop after migration. 
+	  if (consentDecalartion.contains(MISC_COMMERCIAL){
+	  - CustomerAuthorzationHolder.getAuthorzation().getDeviceId()
+	  userService.setPushSupscrribtionCOMMERCIAL
+	  }
+	  ```
+	- Push triggers are transactional. To start saying hey these pushes are commercial; then we need to have migrated the constents.
+-
+- Code cleanup:
+	- TODO @SuppressWarnings("UnnecessarilyFullyQualified" /* Direct `@Immutable` import is confusing. */)
+-
+-
+-
+-
+-
+- DONE Follow up on Retro items, write a reminder.
+- DONE Clockwise not an option; create calendar?
+- DONE Sit with Xavi to check Spinnaker.
+- DONE Sit with Wegdan for permissions, and reqeuest them
+- DONE Dima PR
+- DONE Move @TestInstance(PER_CLASS) to AbstractArchitectureTest for ARchIUnit?
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+- TODO BLOG!
+- TODO IsNull improvement from my branch with the @AlsoNegation thing
+- TODO apply some stuff at tims repo.
+- Explicit argument thingy:
+- ```
+  ```
+	-
+-
+-
+-
+-
+- TODO Abstract maken EP talk
+- TODO CollectorMutability
+- DONE Talk voorbereiden 15 jan
+  :LOGBOOK:
+  CLOCK: [2024-01-07 Sun 14:48:20]--[2024-01-07 Sun 14:48:21] =>  00:00:01
+  :END:
+-
+- DONE Abstract JPLa ff klein beetje verbeterern
+- DONE Abstract verbeteren JPLA talk
+- TODO Drop TestNG stuff from Picnic
+- DONE Abstract Java Magazine
+- DONE Checkstyle ticket
+- DONE Peter bericht
+- DONE Batch implementeren voor Braze
+- TODO Spring Modulith
+- TODO ArchUnit @VisibleForTesting
+- TODO // XXX: PRP-9599: Deduplicate this logic.
+- DONE Gijs spreken voorkeuren
+- DONE SuppressWarnings ticket maken OpenRewrite
+- TODO Bespreken default toevoegen OpenRewrite binnen Picnic
+-
+-
+- DONE Review Gijs' PRs
+- DONE Talk with Stephan about changes in PR Gijs
+- DONE Reactive SOAP PR
+- DONE Review Luke's PR
+- DONE Write message in Slack QQ migrations.
+- DONE Evginii bekijken
+- DONE Ivan sync
+- DONE Create ticket Refaster rule
+- DONE update Refaster rule ticket BP
+- DONE create mini presentation
+- DONE Java meeting verwerken.
+-
+- DONE `IsInstanceLambdaUsage`
+- DONE Other check in  https://github.com/PicnicSupermarket/picnic-wms/pull/3089
+- DONE PSM comment exlaining.
+- DONE open PR with proposal for `StringLocaleCaseUsage`
+- DONE read Nadir.
+  :LOGBOOK:
+  CLOCK: [2022-12-08 Thu 11:51:37]--[2022-12-08 Thu 11:51:39] =>  00:00:02
+  :END:
+- DONE RElease note SOAP
+- DONE Jongo PR
+  :LOGBOOK:
+  CLOCK: [2022-12-08 Thu 11:51:42]--[2023-01-06 Fri 16:20:02] =>  700:28:20
+  :END:
+- DONE other PSM PRs?
+- DONE Review Shang PR.
+- DONE rebase RxJava stuff.
+- DONE Website PR openen.
+-
+-
+- DONE actions/{checkout,setup-java}/tags [link](https://github.com/PicnicSupermarket/error-prone-support/pull/521#discussion_r1136657139).
+-
+- DONE Post mortem GH incident
+  :LOGBOOK:
+  CLOCK: [2023-03-27 Mon 11:09:32]--[2023-03-27 Mon 11:09:33] =>  00:00:01
+  :END:
+- DONE WebMVC CVE
+- DONE SBA CVE
+- DONE Open Spinnaker twice run Renovate PR
+- DONE Open ticket SDKMAN
+- DONE Bjorn z'n berichten samenvatten.
+- DONE PR Template!!!
+- DONE Website Rebasen
+- DONE Website updaten; justthedocs
+- DONE finish PSM-2105 /spinnaker remove apply.
+- DONE https://github.com/PicnicSupermarket/picnic-java-support-modules/pull/2470
+- DONE Applying feedback;
+- DONE Merging Date -> Instant and filing follow up
+- DONE Make the `last_seen_date` required
+- DONE JDK 21
+- DONE check the RabbitMQ messages that are "stuck"
+- DONE Push misc solution feedback.
+- DONE User email wrong, drop. More generally; alert channels should be reliable.
+- DONE Update and rebase follow up PR!
+-

@@ -1,0 +1,118 @@
+title:: Blog / Java 17 + PSM + Lessons learned
+
+- We think there is not enough information to continue the story based on _only_ the previous article. We discussed this and we came with the idea to extend the scope to something like: "How things are going in the Java platform team since the Java 17 release". As kind of a reflection and give an update on current.
+-
+- Insights:
+	- As Platform team, we are the last ones that are able to migrate.
+		- This results in some difficulties:
+			- We cannot experiment a lot with Java 17 features.
+			- All that, while we need to be the ones giving "advice" on best practices and when to use what.
+	- Still many workarounds that we need to fix...
+		- We even had to turn off `hibernate-validator` (from the annotationProccesPath) because we are blocked on `hibernate` 6.24-FINAL release...
+		- Still on `maven-dependency-plugin` problem.
+		- New-relic fork.
+		- Perhaps also mention some examples that _did_ do their best to be compatible.
+	- Also Error Prone requires some work:
+		- There are two options; either fork some things (Error Prone fork)
+		- Get hands dirty and open PRs upstream.
+		- Or both ;)
+			- _ Link to switch expressions.
+			  _ Link to InvalidParam fix for records.
+	- Not many of the features are used _yet_. For example, `sealed` classes are not used that much.
+		- How can we encourage this?
+			- More experimenting?
+			- ????
+	- We can write `XXX`'s in places where we want to use Java 17 features once we target them.
+		- We also did this when we migrated to Java 11.
+		- This allows us to improve the code once PSM is also targeting Java 17.
+	-
+- Other things we can mention?:
+	- We now use `SDKMAN!` such that we can easily switch between Java versions in the future.
+	-
+-
+- What did we really gain from Java 17?
+	- Notable effects of running Java 17.
+		- Can we get metrics on performance before and after targeting Java 17?
+	- People happy they can use Java 17?
+-
+- An extra paragraph could be, "What are we looking forward to"?
+-
+- Perhaps we can think of more things? We could ask in the team?
+	-
+- # Feedback?
+-
+-
+-
+- # Meeting 2 December
+- Agenda:
+	- Intro and alignment
+	- Identify / highlight biggest problems and challenges we faced.
+	- What do we want to do better?
+	- Concrete action points?
+-
+- ### Content.
+- Day after; bump to 17. Runtime.
+- Travis CI able to target 17.
+- Downstream allow target 17.
+-
+- # Now reall
+- Take for granted that we only check LTSes.
+- Compatibility matrix.
+- Agile, tackle issues earlier on.
+-
+- In theory we get the nice things from the new LTs. Like garbage colleciton.
+	- We should have things in place that prove that stuff.
+	- Make us prepared.
+	- Lesson, have things in place to measure impact of going to new LTS.
+	- Make it noticable. Next time make better case.
+- Year later is not really a problem.
+- WEEE upgraded later.
+- Bugs with recoreds that we cannot fix.
+-
+-
+- Base image sooner.
+- Healthy codebase.
+- Is it really worth it?
+-
+- Actual runtime we should do again.
+	- People that are interested are even more useful.
+	- They can try out new stuff as well. Tight connection with us.
+- 18 19 20? --> ASM question
+- If apps don't upgrade.
+- Relatively cheap to have non-ltses?
+- We would gain from it: Knowing; identifying. ALlows us to assess stuff in general.
+-
+- https://asm.ow2.io/
+- Dependent on them.
+-
+-
+- Build of PSM for which it is okay if it fails.
+- Matrix. Not sure what distribution.
+- Latest JDK /runtime version.
+- Consistent baseline. Not all fully supported.
+- Validating runtime with PSM stuff.Have another canonical
+-
+- Dummy webapp? Ta
+-
+- For downstream teams it will be not so nice if we would offer experimental support.
+- We gain a lot from having a confined tech stack. Which we in that case would not have. We would have to support quite specific things. Al
+-
+- Biggest reason to push earlier is to make our own lives easier.
+- Especially because we are the ones that should advise and all.
+-
+- ## Outline
+- Terug verwijzen
+- Current state, alle teams zijn over.
+- Gebruik van de features.
+- In depth, wat zijn de bumps in de roads die we zijn tegen gekomen.
+	- Wath eeft betekent voor het platform team.
+- Platform team perspectief, risico's of kansen
+	- Iets eerder pushen voor het upgraden.
+	- Learning point, meer erin duiken.
+	- Early access.
+	- Spring 6 adoption wel makkelijker
+- Gegaan zoals we gehoopt hadden. Voor 21 doen
+	- Wat coole features eruit pakken.
+-
+-
+- EPS Java 17 compatability.

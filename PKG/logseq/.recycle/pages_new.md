@@ -1,0 +1,1 @@
+- The old code was not incorrect due to the subsequent range check. An alternative to this change would be to suppress the [DoubleBraceInitialization](http://errorprone.info/bugpattern/DoubleBraceInitialization) check on this method. However, simply using .equals is likely less surprising.

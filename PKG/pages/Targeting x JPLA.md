@@ -1,0 +1,5 @@
+- The work pressure
+- The tickets that give you energy
+- Topics that give you energy
+- Being able to do drive by's
+-

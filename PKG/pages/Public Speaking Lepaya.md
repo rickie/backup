@@ -1,0 +1,75 @@
+-
+- Met Wouter Braaf
+- # Vragen
+- Wanneer wel vragen gebruiken en wanneer niet?
+- Hoe echt mensen enthousiast te maken?
+- Hoe content gebruiken om dingen leuk
+-
+- Hoe meer "grappen" erin verwerken?
+- Tips om iets grappiger te maken?
+-
+- ## Antwoorden
+- Zelfspot; meer jezelf zijn.
+- N ieuwe generatie; nee hoor; ik weet dat jullie al langer programmeren dan ik oud ben, maar ik kom hier om iets toe te voegen.
+- Te voorbereid is niet zo nice;
+- Geloofwaardig; spontaan is grappig; breed arsenaal;
+- persoonlijk verhaal over bijvoorbeeld CHeckstyle; zelf fixen.
+-
+-
+- Vroeg interactie als je dat later ook wil;
+-
+- Vragen; anoniem enzo;
+- Juist simpele vraag aan het begin; om ze in de habit te krijgen.
+- Lange vraag; stiltes;
+	- veilig is om iets verkeerds te zeggen.;
+	- wedstrijd van;
+	- quiz; fanatiek;
+	- ik ga stil vallen;
+- einde als nog steeds stil; maar goed dat ik er ben om te tool te laten zien.
+-
+- benoemen slechte grap;
+	- oh though crowd;
+	- moet nog even aan m'n grappen werken
+-
+- relatie tussen mij en het publiek;
+	- engaged houden;
+	- zorgen dat ze onderdeel zijn;
+-
+	- hardop zeggen wat je ziet;
+	- ik zie een glimlach daar;
+	- ik zie een frons;
+		- zal ik een VB geven?
+		- Wil iemand een vraag stellen?
+	- zeggen wat je ziet;
+	- zeggen wat je voelt; afhankelijk van moment van de dag; weinig pauze.
+-
+- GEZIEN voelen WORDEN
+-
+- Cultuur checken; wat kan je wel en niet zeggen.
+-
+- Vooral voor workshop
+	- Wat verwacht je van deze sessie.
+		- Waarschuwing
+		- Of verwachteingsmanagement.
+-
+- beetje de groep aanvoelen;
+	- degene die positief reageren al vragen;
+	- jullie zijn druk
+	- laagdrempelig; in het eerste kwartier;
+	- altijd meer dan een vraag;
+-
+- Wat als je het niet weet;
+	- Zeg dat er miss iemand ind e crowd is die dat weet
+	- Later nog materiaal toesturen;
+	- Hoe kom je er op terug;
+	-
+-
+- Slides gebruiken
+-
+-
+- Hoe groter de zaal, hoe groter de bewegeging.
+- Dwing arm groot.
+- Energie van het podium;
+- Meer gebruik maken van het podium.
+- Staan bam; maar lopen naar een andere plek;
+-

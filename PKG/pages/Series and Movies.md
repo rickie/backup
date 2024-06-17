@@ -1,0 +1,55 @@
+title:: Series and Movies
+
+- The place to get the torrents:
+	- Soap2day
+-
+- Arcane? --> Netflix (Evie recommended)
+- All of us are dead
+- 7500 -> Prime
+- A beautiful mind -> Prime
+- Army of thieves
+- Big Hero 6 --> Disney
+- Top boy , serie Netflix -> london drugs gang.
+- Blue eye samurai --> Enric said it's nice. Netflix maybe?
+- In Bruges -- > probably buy
+- [Talladega Nights: The Ballad of Ricky Bobby](https://en.wikipedia.org/wiki/Talladega_Nights:_The_Ballad_of_Ricky_Bobby)
+-
+-
+- Prisoners
+- Baby driver
+- Interstellar
+- Boyhood
+- Bladerunner (HBO) or buy Amazon
+-
+- **Netflx**:
+- The Night agent.
+- Bodyguard
+- Gentleman,
+- Treason.
+- Band of brothers
+-
+- Series from Floris:
+- Dope Sick (Disney+)
+-
+- ### Deze vind ik dik: (volgens Niek)
+- Three body problem --> Op Netflix.
+-
+- ~~Film: The contractor - Prime~~
+-
+- # Documentaries
+- Recommendations of Miran from Hostel Miran:
+	- Dead of Yugoslavia
+	- Where are you going
+	- No man's land
+	- Once brothers
+	- The butcher of Bosnia
+- Cry from the grave, BBC:  https://www.youtube.com/watch?v=YhvCBC2nlro
+- No room for denial: https://www.youtube.com/watch?v=Sq77TySTst0
+-
+- Phil Leonard wrote down the following series (I think they are on Netflix):
+	- The Expanse
+	- Succession
+	- The Wire
+	- The Sopranos
+	- Battlestar Galactica
+	- The good place

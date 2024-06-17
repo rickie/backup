@@ -1,0 +1,9 @@
+- Commands used to check stuff ([[Docker]] commands):
+	- ` docker-compose --project-name component-test --file docker-compose.component-test.yml logs auth`
+	- or instead of `logs auth` use `ps` to see what images are up and running.
+	- `logs -f <projectname, optional?>` means following the logs.
+-
+- Testing locally:
+- Explained by Pieter;
+- https://github.com/PicnicSupermarket/picnic-spring-boot-admin/pull/52#issuecomment-1029948826
+-

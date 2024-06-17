@@ -1,0 +1,73 @@
+- ## Commands DSL related
+- `uuidgen | tr '[:upper:]' '[:lower:]'` to create UUID.
+- assert that it is correct.
+-
+-
+- Explanation of Spinnaker things:
+	- Checkout, checkout files.
+	- vimdiff file file
+	- `generate-resources` for subdirectory.
+-
+- vimdiff met meerdere files
+-
+- Sequence done together with Stephan:
+	- git rebase origin/master
+	- git diff origin/master --name-only
+	- ./generate-resources.shg
+	-
+	- vimdiff targets/global-prod/platform/spinnaker/sponnet/python-platform/example-cronjob.jsonnet targets/global-prod/platform/spinnaker/sponnet/python-platform/example-fastapi-webservice-async.jsonnet targets/global-prod/platform/spinnaker/sponnet/python-platform/example-fastapi-webservice-sync.jsonnet
+	- ./diff-resources.sh python-platform
+	- ./apply-resources.sh python-platform
+-
+- For helmfile stuff:
+	- helmfile -f helmfile.yaml diff
+	- helmfile -f helmfile.yaml sync
+-
+-
+- polling van de docker images niet gaat werken en dat het fixen de timeline unknown is.
+-
+- Pieter:
+- Je hebt `helmfile sync`` nodig als er changes zijn aan `platform/spinnaker/helmfile.yaml` of `platform/spinnaker/spinnaker.values.yaml`.
+  Changes aan `platform/spinnaker/sponnet/*` kunnen gewoon via `spin apply`
+-
+- # Commands for hallyard pod
+- `kubectl get pods --context picnic-global-prod -n platform` or `picnic-global-dev`
+- `kubectl logs spin-clouddriver-6965dccfd-d5cpk --context picnic-global-prod -n platform`
+- `kubectl exec -it --context picnic-global-prod -n platform spinnaker-spinnaker-halyard-0 /bin/bash` (don't have the rights for this though)
+-
+-
+- # Problem with helmfile sync
+- Microservices on steroids.
+	- HALL application
+- Persistent pod.
+- Proper solution;
+	- where does timeout come from?
+	- initially saw timeouts - until we didn't | syncing with DockerHub?
+	- MAYBE; we can work around this problem by migrating to HELM 3.
+		- It appears that in HELM3 there is support for customizing timeout of a sync operation.
+-
+-
+- # Fix helmfile stuff
+- `diff`
+- `sync`
+- watch kubectl.
+-
+- # Pod
+- Inspect pod: `kubectl describe pod <pod_name> -n <namespace_name>`
+-
+- # Troubleshooting
+-
+- `kubectx picnic-global-prod`
+- `kubens platform`
+- `kubectl get pods`
+- `kubectl describe pod spin-front50-769b4c6cf4-99mvz`
+- `kubectl port-forward spin-front50-769b4c6cf4-99mvz 8080`
+-
+-
+-
+- ``spin --config "/home/rick/.spin/config-dev" pipeline delete -a "dummy-app-1" -n "Deploy to FR DEV (Wait Stage)"``
+-
+-
+- # Develop commands:
+- `kubectl port-forward svc/spin-front50 8080`
+- `SPINNAKER_ADMIN_USER="rickie" FRONT50_HOST="localhost:8080" ./commands/fetch_pipeline_by_id picnic-fr-dev-java-platform-dummy-app-1`

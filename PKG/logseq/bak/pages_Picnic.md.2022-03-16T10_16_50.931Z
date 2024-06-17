@@ -1,0 +1,38 @@
+- [[Error Prone]]
+- [[error-prone-support]]
+- [[PSM]]
+- [[Commands]]
+- [[Stephan Questions]]
+-
+- [[Picnic - Meetings]]
+-
+- TODO:
+	- JUnitMethodDeclaration check - don't change modifiers in abstract class.
+	- Move Refaster templates from Platform to EPS?
+	- https://github.com/PicnicSupermarket/picnic-stock-service/pull/639#discussion_r800466683
+	  Hoepelman: `.map(Optional::orElseThrow)` --> `.flatMap(Mono::justOrEmpty)`
+	  vergelijkbare regel; not functionaly equivalent. silently dropping element.
+	  > Is it the same for `filter(Optional::isPresent).map(Optional::get)` -> `flatMap(Mono::justOrEmpty)` ?
+	- BugPattern that does: assertThat(T).isEqualTo(null); -> assertThat(T).isNull();
+	  BugPattern that does: assertThat(optional.orElseThrow()).isEqualTo(value) -> assertThat(optional).hasValue(value);
+	  BugPattern: add open telemetry annotations where the annotation for new relic is already.
+-
+- Short term:
+	- AbstractClass fix in JUnitMethodDeclCheck
+	- PR reviews!
+		- Pieter z'n PR
+		- Phil z'n PR
+	- Refaster Test framework met Stephan bespreken!
+	- SBA setup goedkrijgen!
+	- Openen PR immutable things die Stephan opbracht op migratie PR
+	-
+	-
+-
+- Git bisect vragen aan Bastien en Joao
+-
+- Explain Spinnaker things
+	- Checkout, checkout files.
+	- vimdiff file file
+	- `generate-resources` for subdirectory.
+-
+- Other:

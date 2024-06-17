@@ -1,0 +1,98 @@
+title:: Stephan Questions / 2022-04
+tags:: {{questions}}
+
+-
+- # 14 April
+- https://docs.google.com/document/d/1bJfjxpsFtlQLEDonDm3Kw37yswVXPkZgf8jmsTFw5iw/edit?usp=sharing
+- [Presentation](https://docs.google.com/presentation/d/1jDZB1buqnkNgde4z74uVZN-7VwG8nZnJor8HhWGtZQw/edit#slide=id.g1098ddcda29_0_118)
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/37#discussion_r806987270
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/23
+-
+- Let's discuss ;) https://github.com/PicnicSupermarket/error-prone-support/pull/28#discussion_r846782860
+-
+- Interested in Reactor stuff, maar timeline....
+-
+-
+- ## TESTNG TO JUNIT #error-prone-support
+- 500 Dataproviders
+- 2 opties; 1 dimensional array of 2 dimensional.
+- 1 deimensional --> Ik hou het exact als het is, alle return statements die niet in de lamda's zitten. Directe return statements. Stream.of() Arrays.Stream(ieder elemenet map je naar arguments.)
+	- Single dim array dan direct
+	- Multi dim array dan niet iets extra's?
+		- Je introduceert bolilerplate.
+		- Die je helemal niet wilt. Wrap het maar zodat het in ieder geval over zijn.
+- 2 personen.
+-
+-
+- ### README EPS UPDATEN: #[[error-prone-support README.md]]
+- Hoe kan je contributen
+- Design filosofie
+- State van de code
+	- Majority of these checks has been applied to the full Picnic Javacdoe comprising this and this many lines.
+-
+- Release notes;
+	- Eerste versie
+	- Beschrijven wat er is.
+-
+- #cicd checken
+-
+-
+- ## NAMING Algoritme
+- Er is geen overload, 1 check waarin , wat als ie start met een negatie.
+- Andere overload, wat als het lambda is met nog iets anders erbij.
+-
+- AssertThat, kijk naar code, ik zie AssertThat; Als methode die je ziet een overload heeft, dan ook de parametertype toevoegen,
+- 1-2-3-4- logica houden. --> Clashes en je weet het niet, why not.
+-
+- Een mapping hebben voor als je bv een aftertemplate met `==` hebt enverder weinig.
+-
+- ### 19 april
+  id:: 625963df-09a9-4b3c-b031-874b5382ab0f
+- PublicConstructorForAbstractClass --> DO we want that? [link](https://github.com/google/error-prone/pull/3100)
+	- A: Violation introduceren; niet al iets hebben dat het flagged.
+- Same for: HashCodeToString --> Do we want that? [link](https://github.com/google/error-prone/pull/3101)
+	- too much
+- https://docs.google.com/document/d/1bJfjxpsFtlQLEDonDm3Kw37yswVXPkZgf8jmsTFw5iw/edit?usp=sharing ---> Summer bootcamp stuff
+-
+- Zal ik deze fixen?: (simplification): https://github.com/PicnicSupermarket/oss-parent/pull/205#pullrequestreview-944206605
+- Checkstyle in OSS parent: https://github.com/PicnicSupermarket/oss-parent/pull/198#pullrequestreview-943857966
+-
+- David
+- Chris
+	- CD; ja. Discussie, commits naar GH.
+-
+-
+- # 25 april ?
+- https://sourcegraph.com/search?q=context:global+repo:PicnicSupermarket/*+visibility:private+%27enable-keycloak%3Dfalse%27&patternType=regexp --> Staat overal uit lijkt het wel. Moeten we het weghalen?
+-
+- # Nullable matcher again.
+- Link to: ((6259643c-2947-4b3f-af38-406f2c05142f)) Q2 page.
+- ((625963df-88b5-443d-bb63-7f3171c57810))
+- `/tmp/error-prone` is a git stash with some related changes
+-
+- # Incompatibility error-prone 2.13.2 #[[Error Prone]]
+  id:: 6282adce-c85c-42b8-a5ea-b4f008e76b50
+- Dive into `UFreeIdent` stuff for `refaster_simple_return` branch...
+	- THe current thing cannot work because it is "too fake". So the expression should be more real. Use a compilation/bugchecker test helper thing.  Do something like we also do with IsArray setup we have for EPS.
+- See `DummyChecker` in EP; even better :`ImportArrayList extends BugChecker`
+-
+- https://github.com/google/error-prone/pull/2706
+-
+- for i in $(find  . -maxdepth 1 -mindepth 1 -type d -print | grep -vendor); do ./generate-resources.sh $i;  ./apply-resources.sh $i;  done
+-
+- ## Refaster thing
+- Conferentie stuff.
+- Look at code he created.
+- Should I create a renovate?
+- Discuss next things for EPS
+-
+-
+- ## Questions
+- Talk about Lunch & Learn; what would be nice.
+-
+- Ferdinand joining research efforts?
+-
+-
+-

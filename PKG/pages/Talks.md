@@ -1,0 +1,55 @@
+- #Picnic
+-
+- Oefenen:
+	- Lopen
+	- Grapjes maken
+	- Wat luchtigers erin.
+	-
+- # Open ideas for talks
+- Javadoc optional get, picnic slide, title color, different Refaster rule.  Comparison slide.  Meer lopen
+-
+-
+- ## Error Prone talk
+- Refaster simple example in demo project maken
+- Benoemen / laten zien waar je voorbeeld implementatie kan zien.
+	- How do you actually integrate it???
+- Noemen: Tech seriously, company around code quality and consistency. Developer productivity
+- Error prone en refaster module demo project
+- https://www.google.bg/books/edition/The_Programmer_s_Brain/9C89EAAAQBAJ?hl=en&gbpv=0
+-
+- Other notes:
+- **
+- Culture, people are used to upgrades, and the opinionated can still be part of it, but also sometimes are not that strict, as long as it is enforced.
+- Strong engineering culture, focus on tech.
+- **
+-
+-
+- ## Java platform
+- Tech seriously, company around code quality and consistency. Developer productivity
+- Consistency part keer besproken met Stephan; dat toevoegen.
+- Hoe cultuur zover krijgen
+-
+- Three topics; culture; consistency/uniformity and automation
+- https://www.google.bg/books/edition/The_Programmer_s_Brain/9C89EAAAQBAJ?hl=en&gbpv=0
+-
+-
+-
+- ## Idea
+- Static analysis and automation all the way
+-
+- https://www.meetup.com/amsterdam-java-user-group/events/291354295/ February 23
+-
+- https://www.meetup.com/european-software-crafters/events/292171624/ May 11
+-
+- #[[Talk JPLA]]
+-
+-
+- Wellicht plannen:
+	- CodeLab.jug, workshop.
+	- JUG Arnhem
+-
+- Mogelijk in de toekomst;
+	- Rabobank x Picnic
+	- Utrecht JUG?
+	- With ING?
+-

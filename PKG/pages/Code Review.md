@@ -1,0 +1,6 @@
+-
+-
+- Is alle logica getest?
+- Klopt deze aanname?
+-
+-

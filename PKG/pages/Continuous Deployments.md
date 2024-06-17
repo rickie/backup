@@ -1,0 +1,5 @@
+-
+-
+- Directly on PROD
+-
+- Hard to track OOM's as you deploy almost daily

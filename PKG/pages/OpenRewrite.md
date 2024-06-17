@@ -1,0 +1,4 @@
+-
+-
+- PRs
+- `org.apache.http.config` example is `ConnectionConfig` ([source](https://github.com/openrewrite/rewrite-spring/blob/8a563003ea739564ace0643d90bf9520914be84f/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml#L152))-->`org.apache.hc.client5.http.config.`

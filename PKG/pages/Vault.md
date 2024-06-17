@@ -1,0 +1,6 @@
+- Login Vault, use method `OIDC` and role `global-dev-platform` for [this URL](https://vault-dev.global.picnicinternational.com/ui/vault/auth?with=oidc)
+- [README.md](https://github.com/PicnicSupermarket/picnic-java-support-modules/tree/master/vault-support) for Vault
+-
+- Revert.
+- Check outcome.
+- Probably incorrect. Understand what looks like.

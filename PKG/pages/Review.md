@@ -1,0 +1,221 @@
+- 3500
+  200
+  800 --> 1200
+- Onderwerpen bedenken om te bespreken
+- Hoe zie ik m'n toekomst voor me
+- Wat wil ik graag doen
+- Picnic experience.
+- Andere zijn zoekende naar wat te doen / hoe in PSM te werken.
+- Error Prone knowledge. Ownership nemen? Over half jaar / jaar? Stephan als Gatekeeper?
+-
+- Ik zie Stephan als tech lead en behandel hem ook zo. Door het werk dat we doen, omdat ik hem chill vindt. More of an observation.
+-
+- PSM Modules vind ik ook leuk. Samen met anderen werken aan verbeteren.
+-
+- # UPDATE!
+- Toch gelukt; 500 euro opslag gekregen
+-
+- # Feedback
+- Use RFC and documentation to find out what choice we should make (e.g for specific EP rules).
+  collapsed:: true
+	- Feedback Phil:
+		- Rick actively requests feedback for his defence and conference presentations. Rick also has given a number of different presentations internally and it has been really nice to see visible improvements in his presentation style, catering to the audience, refinement of content and demonstrations. I think with continued focus, Rick can become a real ambassador for all things JPLA including Open Source projects and sharing at tech meetups and conferences.
+		  
+		  With regards to presenting arguments, consider using documentation/RFCs for design and presentation of complex problems with a few options and attributing pros/cons to each. Just like how you called votes on choosing between two code patterns for a resulting refaster template. For more complex and beyond stylistic choices, well written design documents will help accelerate coming to a decision within the JPLA team
+	-
+-
+-
+- # Review 2024
+- ## KPI's
+- Error Prone
+	- [Another one](https://picnic.greenhouse.io/people/328141423?application_id=353974394) that found picnic through error prone :slightly_smiling_face: ~ Jan Kothe April 24
+-
+-
+-
+-
+-
+-
+- # Data voor de keer in 2023
+- https://github.com/pulls?q=is%3Apr+author%3A%40me+archived%3Afalse+sort%3Aupdated-desc+created%3A%3E2022-01-01+is%3Amerged
+- Bijna 300 gemerged.
+-
+- 1400+ PRs in 2022.
+-
+-
+-
+-
+-
+- # Review October 23 2022
+- Points of feedback:
+	- Show same drive, self-sufficientcy, ownership and mastery for other JPLA products/projects.
+	- Sometimes Stephan usually being the main architect.
+		- Easiest improvement would be w.r.t. the overall EPS.
+	- Anticipating and prioritising requirements (and roadblocks!) *before* I work on them.
+		- E.g. getting a (rough) overview of all the things that need to be done, in what order and when is hard for me. Sometimes still a bit chaotic.
+	- He'd like to see take same mastery of writing clean code in other JPLA topics/projects.
+	- Keep working on prioritization.
+	- Storytelling; both beginning and conclusions (plus potential followups) could be clearer.
+		-
+	- Start dialog about where I want to go.
+		-
+			-
+			-
+- Wellicht ook meer gezicht van Picnic. Presentations. Blogs and all.
+- Java knowledge in general
+- Opensource contributions in general (like Halil did A LOT and you are also doing with e.g. Reactor)
+	-
+- Picnic as a whole.
+- Jelmer help as k him, to move projects as a whole.
+	-
+	-
+- Ownership side, ad-hoc. Bigsteps of the biger prduct.
+	- Having clear in my mind.
+	- Rolledout that we have checks within PSM.
+-
+	- Take ownership, take a direction.
+-
+- public speaking.
+	-
+	- Selfsuciency,
+-
+- Managing. How to do, what can you do.
+- How to give leadership stuff.
+	-
+-
+- # April 17
+- Feedback from others:
+	- More focus; less responding questions on Slack quickly.
+		- Make sure to be able to work focused on a task.
+	- Think about what brings the most value to Picnic
+	- Be critical on what should be on our roadmap. Help shape it.
+	- Balance; Think about the impact. Prevent PR discussions; Sometimes say no to "simple" bug checkers.
+	- Phil: Rick has yet to lead on one of such projects by himself.
+	- Phil: Push for EPS independence: less relying on Stephan.
+	- Phil: A vision for EPS. Create and share a vision for this.
+	- Phil: structural way of answering these requests. How to do this?
+-
+- From Nathan;
+	- Find way in domains/codebases that are unknown to me.
+	- Concept of inductive and deductive thinking.
+	- Ensuring efficient feedback loop --> effecient engineer.
+	- **Decisions in the context of business and its goals**, other teams and the work ahead.
+		- Improve how we can ensure that we can argue for upholding said banner (how to convince business and others).
+		- How can we deliver the biggest impact?
+		- How can we best enable the team to deliver?
+	- Incidents; dont I'm eager to jump on them. Feel confident
+		- To assume the role of lead
+		- Feels he can delegate tasks.
+	- Catch mistakes early, the smaller impact they will have.
+		- Be continuously involved in tickets written by others
+			- Improve critical thinking
+			- Even when not too well known in the context
+	- What are we testing?
+		- Feedback loop. Iterate fast.
+	- Matter of focus time.
+	- Potential to take more leading role in meetings.
+	- Team / projects being unblocked
+		- When having fundemantal discussion in PR; find resolution but also ensure others potentially affected are in the loop.
+		- Inform stakeholders in a timely manner (EPS release and PSM release) as they are on critical path of other projects.
+		- Concisely and accurately reflect what we are working on, what we will be working on, what we need and expect from others (and thus we can also manage expectations).
+	-
+	-
+	- Q: "and that as a team we should carry the weight." --> Yes , is this EPS focused or?
+	- Q: How do we want to structure that?
+-
+- "As you become a more experienced engineer, you need to realise that you are responsible for creating that focus for yourself."
+- "It would be good if he feels confident to assume the role of lead, and also feels he can delegate tasks."
+- "Rick is a joy to work around and a bundle of sunshine."
+- "JPLA being such a small team requires strong individuals to enable the team to deliver and enable as much as we can, carrying much of Picnic's (invisible) tech foundations. As such, JPLA would not be JPLA without him, and Picnic not Picnic."
+-
+-
+-
+- ## Discussion:
+- Meeting Copilot;
+	- Bedenken wat willen ze/we uit de meeting halen; doorvragen;
+	- Lepaya; blok wat niet interessant is. priority.
+	- Leadership; kar trekken.
+- Team, sole; niet bottleneck; busfactor.
+	- Jezelf obsolete te maken.
+	- Je baan als leader het best gedaan.
+	- Hoe in de toekomst dit makkelijk maken voor anderen.
+	- Uitgebreide omschrijving van POCs enzo.
+	-
+- Kwali waarborgen
+- Gretig voor leider dingen
+- Kansen; juist onbekenede buiten EPS en EP en wat je kent op te zoeken.; Skills van EP kan toepassen binnen andere plekken.
+- Switch van spinnaker nog;
+- Focus; planning; prioritizeren.
+- OpenRewrite; met Jarka over hebben; oefenen. Estimates.
+- Gijs;
+-
+- ### Why
+- Perform erg goed;
+	- Invloed op intern de cultuur
+	- Maar ook zeker extern. Zijn weinig mensen die dit doen.
+- This was explained by Daniel,
+- Both reviews were really good.
+- Impact I'm having; internal and external.
+- The frequency with which the salary was discussed was changed, but it didn't mean that the amount of money for the raise would change
+-
+-
+- 300 aangeboden 18-3-2023; ga vragen voor meer.
+-
+- 600 aangeboden 11-4-2024. Niet gevraagd voor meer, zeer blij mee.
+-
+- ## Events
+- start Picnic fulltime: 1/10/2021 - 30/9/2022
+- 1/12/2022 Onbepaalde tijd contract; (vgm 4500).
+- 1/04/2022 Nieuw loon: 5000.
+- 1/04/2023 Nieuw loon 5300.
+- 1/04/2024 Nieuw loon 5900.
+-
+- # Resasoning 19 Apr 2023
+- Reasoning:
+-
+- During the initial contract meetings with Daniel we discussed the regular reviews once I would start at Picnic. He said that in the first two years a review would be every half a year, after that they would be yearly. One of the things that would be discussed during each of these reviews was the compensation. Based on how well the person is doing, and how much value the person adds, there could be a change in compensation.
+- If someone showed competence and significant growth this change in compensation could lead up to 500 euros, as experienced.
+-
+- As of last year, the company decided to only discuss compensation on a yearly basis. When this was explained to me, it was mentioned that this didn't mean that the increase overtime would be less. The steps in compensation that I would take would be less frequent, but the steps would be bigger.
+-
+- For a few reasons I expect a higher compensation to be in place:
+	- I'm performing really well, I'm productive and have an extremely high output (while not giving in on quality).
+	- In addition to our roadmap, I'm working on shaping the internal developer and quality culture, mostly via Error Prone Support.
+	- I'm representing Picnic to "the outside world", which only few people at Picnic do. This impacts both our "business card" and can impact recruitment (with the direct result of the recruitment of Benedak Halasi).
+-
+- Based on these reasons I can give an indication of my expectation which would be the 2x 500 euro raise for both half a years.
+-
+-
+-
+- Based on a few things I would like to emphasize why I qualify for
+- For those reasons I'm convinced I should be rewarded as such.
+-
+- Leuk dat het hoort bij level, maar ik draag meer bij dan sommige andere developers.
+-
+- Based on my past two reviews I can say I'm doing
+- Additionally, not only internally, see this in this also resulted in the recruitment of Benedak.
+-
+- Just before I joined Picnic I discussed with Daniel that in the first two years at Picnic every half a year there was a review where compensation could be discussed. If someone showed competence and significant growth this change in compensation could lead up to 500 euros, as experienced.
+- So based on all this
+-
+-
+- Performing really well
+  Responsibilities
+- Internal shape internal culture 
+  As practical ly no one else at picnic externaluze. 
+  Recruitment of ben.
+-
+-
+- # Response Femmie
+- Hi Rick,Thank you for your message and sharing your reasoning.
+  As mentioned in our review, we assess compensation based on your level of performance based on the career framework. In this assessment we do take into account the impact that you're making as well as the areas where you have potential to grow. The current compensation proposal matches your current performance in the role.
+  Even though I have not been part of your earlier conversation with Daniel, I want to manage expectations that a salary raise of €500 on a 6 months basis is not realistic (in Picnic context). The change of half yearly to a yearly comp raise did not change this, as this expectation would also have not have been realistic in a half yearly compensation cycle.
+  I hope I have addressed your concerns sufficiently. We look forward to working on your development together, based on the input of the review.
+-
+- Hi Femmie,
+- This is unexpected; a salary raise after 6 months is exactly what happened to me a year ago. So I disagree with it being unrealistic. I can imagine this cannot be the case _every_ half a year. However, the last time my compensation was discussed is 1 year ago.
+- In addition to this, I have shown a lot of growth last year (this is also clear from the reviews). I even went from the medior level to senior level. I am recognized in my growth but not compensated for such growth. However, I expect an adequate compensation change that reflects this. For that reason I like to propose to meet each other  at €500.
+-
+- Levels, medior senior 
+  Recognized in growth not compensatied for such growth. 
+  Adequate compensation change that would reflect this.
+-

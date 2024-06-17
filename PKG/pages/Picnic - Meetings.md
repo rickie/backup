@@ -1,0 +1,104 @@
+title:: Picnic - Meetings
+
+-
+-
+-
+-
+- ## November 2022: Retrospective Java 17 journey migration
+	- Agenda:
+		- Intro and alignment
+		- Identify / highlight biggest problems and challenges we faced.
+		- What do we want to do better
+		- Action points?
+-
+-
+-
+- ---
+-
+- 02-22-2022: POM - Proxy DC's
+	- Summary: [here](https://github.com/PicnicSupermarket/picnic-java-support-modules/pull/1753#issuecomment-1047655869)
+	- Stock of ours in other (non-Picnic) DC's
+	- Why not String? -> Short term.
+	- In the future change for sure; warehouse, rethink different take on that.
+	- Introducing this; not massively increase (lot of) tech debt.
+	- Go for option one, not `PicnicWarehouseId` a bit overkill perhaps. Reconsidering.
+-
+	- Do we need to be able to derive it from the ID itself?
+	- Put the lookup capabilities in `asset-service`?
+-
+- 02-22-2022: `messaging-support 2.0`
+	- Summary: [here](https://teampicnic.slack.com/archives/GM1TJ5YNB/p1645031314477989)
+	- Consumer allow : retry `n` number of times.
+	- Support backup?
+-
+- PSM Release
+	- Always in first week
+	- https://github.com/PicnicSupermarket/picnic-java-support-modules/pull/1753 --> Must go in.
+	- We have to do it without Nathan now, otherwise it will be too much.
+		- Create a branch, snapshot, commit to a branch.
+		- Confident testwise everything works.
+		- Upgrade PRs are open, add it to that.
+	- Nathan om input vragen
+	-
+-
+- # Core's GraphQL for JPLA
+- Meeting date: 8 December 2022.
+- ## GraphQL
+- API Design paradigm
+- Submit queries to an endpoint.
+-
+- Downsides:
+	- Harder for people to get used to this way of API design, requires mental switch as well.
+	- Problem that it is not as nice as Immutables.
+	- Currently pascal case is used.
+	- No trace ID yet.
+	- How do we handle error codes? Now only error messages.
+	- No WebFlux? Only WebMVC.
+-
+- Two ways of doing:
+	- Schema first, generate the rest
+	- Other way around.
+-
+- Security is on the service level. We rely on endpoint level security.
+-
+-
+-
+- # Datadog demo for Picnic
+- Incident channels and whatnot.
+- LOVE indicident management
+- Love the services catalog!
+-
+-
+-
+- # Release process within Picnic
+- Meeting Ivan.
+-
+- ## RabbitMQ direction unclear 16 dec
+- Jarmila Nathan Ivan RIck
+-
+- Current requirements. Break over the future.
+- Solve those problems?
+	- Look at alternative implementations?
+-
+- We are behind versions quiter a lot.
+- We run without resilience already quite a while. For 6 years.
+- Miracle and accident.
+-
+-
+-
+- # 20 dec Rabbit MQ with Phil
+- Could have been more pragmatic.
+- Why only have this now?
+-
+- Maintanence --> QQ will help.
+- Future, how would it run in the future.
+- MS 2.0, bucket of many unknown things.
+-
+-
+-
+-
+-
+-
+-
+-
+-

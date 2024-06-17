@@ -1,0 +1,7 @@
+- Milkman; uitleggen.
+- Midterm goal weglaten.
+-
+- Code quality.
+-
+-
+-

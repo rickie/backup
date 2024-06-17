@@ -1,0 +1,20 @@
+- [[RxJava to Reactor Migration]]
+- [[Refaster test extension]]
+-
+- Rewrites:
+	- `ReactorCollectionWrapper`, `.flux(...).next`-> `.mono`. ([link](https://github.com/PicnicSupermarket/picnic-platform/pull/8660#discussion_r811889761))
+	- `joining("")` to `joining()` ([link](https://github.com/PicnicSupermarket/picnic-store/pull/1208#discussion_r816056875))
+	- `.filter(Optional::isPResent).map(get?)` to `Mono::justOrEmpty` [link](https://github.com/PicnicSupermarket/picnic-platform/pull/8660#discussion_r814011080)
+	- `ImmutableMap.<String, Boolean>builder().put(K,V).put(K,V).build())` --> To `ImmutableMap.of(K,V,K,V)`. ([link](https://github.com/PicnicSupermarket/picnic-platform/pull/8660#discussion_r816604101)).
+	- `concatMap(Flux::fromITerable)` -> `concatMapIterable(identity())` ([link](https://github.com/PicnicSupermarket/picnic-pom/pull/1961#discussion_r818794918))
+-
+- Error Prone improvements
+	- BadImport fixen
+	- UnusedMethod fixen ? Alles Jackson gerelateerd niet checken
+-
+- AssertJ rewrites:
+	- `isEqualTo(null)` --> `isNull()`
+	- `.withMessage(String.format(...))` -> drop `String.format` ([link](https://github.com/PicnicSupermarket/picnic-salesforce-bridge/pull/473#discussion_r816028830))
+	- `.verifyErrorSatisfies(t -> assertThat(t).isInstanceOf(ItemNotFoundException.class));` -> `.verifyError(ItemNotFoundException.class);` ([link]([https://github.com/PicnicSupermarket/picnic-platform/pull/8717/commits/9c21d4689b1cd982f1cc843b4922b9c06835f0f1#diff-09303d6756087785db4b1dcc2fdd2268ae24f67bcdd14be1a79f927f1e42afe4L147](https://github.com/PicnicSupermarket/picnic-platform/pull/8717#discussion_r820895148)))
+- ---
+-

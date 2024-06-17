@@ -1,0 +1,11 @@
+- Containers running in pods.
+-
+- # Docker
+- Human errors.
+- Faulty application can claim all resources on a machine.
+-
+- Virtual machines still not the solution.
+-
+-
+- Docker compose - `depends_on`.
+-

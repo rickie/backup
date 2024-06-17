@@ -1,0 +1,9 @@
+- How to respond?
+	- Take your time to read it completely and make sure you understand this.
+	- Can I already answer this?
+	- Is it clear to me?
+-
+- If I don't know it;
+	- Is this already asked?
+	- Can I found out or try anything myself?
+	- Who would know? Tag that person.

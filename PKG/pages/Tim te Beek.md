@@ -1,0 +1,8 @@
+- SB3 upgrade vragen:
+	- `DefaultUriTemplateHandler` migration is not done. --> `DefaultUriBuilderFactory`
+	- SuppressWarnings is onduidelijk voor me.
+	- Formatting?
+	- Inserten
+		-
+	-
+-

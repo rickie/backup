@@ -1,0 +1,103 @@
+- Intern EPS release
+- Alternative for TravisCI -> GH Actions (use FOLO setup?)
+- Release strategy --> tag based? use OSSHR staging or not? (first internal testing?)
+- OSS-parent --> Compatible maken met EPS.
+- Have a way to validate against downstream projects. (exists a PR in `oss-parent`) (Picniccer moet dit kunnen doen). Kijken of er al iets exist. Mensen de fork hebben, wil je de fork testen.
+-
+- PI tests
+-
+- Themes
+	- What is the priority of OSS in Picnic?
+-
+- Andere repo's kan je direct checken of het werkt als je een update doet. EPS moet sws in een losse repo.
+-
+-
+- # OSS meeting 2.0
+- Write manifesto, should be a proposal.
+	- How we organize it?
+	- What we dedicate to this?
+	- Who whould be stewards?
+	- How much time people spent?
+	- What repo's we have?
+	- What are the standards that we have?
+		- 2 approvals
+		- Dependency upgrades
+		- Secretscanning
+		- CI CD pipeline
+		- External contributors (guidelines?)
+-
+- Be transparent!
+-
+- Without OSS Picnic wouldn't be there for sure.
+-
+- 10 hours per week per team can devote to a OSS product.
+- We need stewards.
+-
+- ## What does exist?
+- Mercedes: https://opensource.mercedes-benz.com/manifesto/
+-
+- https://opensource.com/article/17/2/open-source-first
+- https://www.deskfiler.org/oss-business.php
+-
+- Homebrew
+  https://github.com/Homebrew/brew/blob/bbed7246bc5c5b7acb8c1d427d10b43e090dfd39/docs/Maintainers-Avoiding-Burnout.md
+  https://gist.github.com/ryanflorence/124070e7c4b3839d4573
+-
+- ## Meeting
+- What is manifesto, purpose
+- Importance to topic, participate and maintenance.
+-
+-
+- Do these things:
+- How do we develop
+  Not hide bugs
+  Not hide roadmaps
+- How we do we support on a real practical level 
+  Guidelines (external contributors)
+  Dependency upgrades
+  Approvals
+  Secret scanning
+  CI/CD
+  Static analysis
+-
+- https://docs.google.com/document/d/1s842st9O50LYCphGjPgbafs0THD_3IGpbXeY8qXOguc/edit
+-
+- # All open source repo's
+- We have 67 public repositories, [link](https://github.com/picnicSupermarket/?type=public&language=&sort=).
+- We have 50 forks, [link](https://github.com/picnicSupermarket/?q=&type=fork&language=&sort=).
+- We have 16 open source repo's, [link](https://github.com/picnicSupermarket/?q=is%3Apublic&type=source&language=&sort=).
+- We are missing one, but it is probably the archived `renovate-discussion-1392` [link](https://github.com/picnicSupermarket/?q=is%3Apublic&type=archived&language=&sort=).
+-
+-
+- # Meeting 21 April
+- ^^Preparation notes^^
+- https://picnic.atlassian.net/browse/PSM-1344 --> This ticket will be a research to decide on how to take action for "all" OSS repositories inside Picnic. You can track progress there.
+- We indeed need stewards. A group of people that _wants_ to devote time to it.
+- Why would we make it public? Really no value in it, for _Picnic_. Actions should speak louder than words in this case. Show we actively maintain it.
+- Lower the barrier for ourselves, make sure we can maintain this with a relatively low effort.
+-
+-
+- Good members of community. People see us.
+- Release stuff, support it, or clearly state that we don't maintain it anymore.
+- Business case;
+-
+-
+- # Open source with Expedia.
+- Driven by volunteers.
+	- Not explain it wrt to costs. No return of investment.
+	- Maintaining git and conferences is not "free".
+		- Go to leadership and present case. This is why we require investment.
+- Innersource. Establishing practices.
+- Internal adoption is also important. Internal use.
+- Try to get people interested that are "low effort".
+-
+- Core set of maintainers. Sometimes only 1. They don't map to a team expedia. The owners.
+-
+- Reasons
+	- Good way to meet people across company.
+	- Build connections.
+	- Talk to leadership, or legal.
+	- Not only Day to day work , something different.
+	- OSS world, traditionally people do things in their spare time. Then burning out.
+	- Freedom. You are the owner.
+-

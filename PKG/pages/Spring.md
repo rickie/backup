@@ -1,0 +1,378 @@
+- To manage dependencies --> dependency injection. (Aspects)
+- Instances of our classes.
+- Library and WebClient's.
+- Integrations  --> Mongo --> Reactor
+-
+- you use the library
+- the framework calls your code
+-
+- @Service @Autowired, Spring will inject it.
+  Initialize a bean of this service. Create instance.
+	- Field injection.
+	- Method injection.
+	- Constructor injection.
+-
+- Objects when you put an annotation, is a singleton. All our @Component.
+	- @Component // the rest. mappers, infra code.
+	- @Service // DOMAIN services
+	- @Repository // Repo layer (DB)
+	- @Controller
+	- @RestController  // anything returned is marshalled as JSON (by default) to the HTTP client
+	-
+	- Do we want to have our own naming for the annotation? Use Facade annotation.
+-
+- ApplicationContext, @Autowire it.
+	- Use Dependency Injection; not using the retrieval programmatically. --> Spring can start up while having code that is not correct.
+		- Dont do it:
+			- // it allows cyclic deps
+			- // runtime failure if missing beans
+			- // +1 line shitty code
+-
+- Define Beans. (also singleton)
+- @Configuration
+  class Config {
+    @Bean
+    public Conversation method() 
+      
+  }
+- As many instances managed by Spring as possible. try to have
+- Use Bean for classses that you cannot change, so for example if they are in a library / JAR.
+- @Bean("customName")
+-
+- SpeL Spring expression language.
+-
+- john() calling in config files locally, captured by Spring somethow.
+	- extends MyConfig. Will override it. Check singleton cache or make actual John. It overrides your methods.
+-
+- // SINGLETONS SHALL NOT HAVE STATE (related to current request) >> because a RACE CONDITION will appear in a multithreaded env (like handling web requests)
+-
+- @PostConstruct --> After method is created and injected, call this method.
+- other lifecycles than the default (Singleton)
+	- prototype // Spring will create a new instances everytime it needs to give you one.
+	- request //
+	- session
+-
+- // bad practice because it allows you to fetch other things. --> Use @Autowired applicationcontext.
+- Workaround:
+	- ObjectFactory<LabelService> service = | ObjectFactory.getObject
+-
+- ## Properties
+- @Value("$Pwelcome.welcomMEssage}")
+	- Fields
+	- Constructor
+	- Bean parameter
+-
+- @ConfigurationProperties(prefix ="welcome")
+- URL, lists. Maps.  Class<?>
+-
+- Spring profiles;
+	- Conditionally load Beans
+-
+- Hook into Spring lifecycle event: (at startup)
+	- @EventListener(ApplicationStartedEvent.class)
+	- implements CommandLineRunner
+	- @PostConstruct
+-
+- ## Spring Boot
+- Preconfigured stuff. Auto configurations.
+- Goal = rapid development: a featuree you want come ready out of the box.
+- "convention over configuration"
+-
+- class @Configuration    |  use @ConditionalOn*
+- @ConditionalOnProperty(name = "myClass")
+-
+- Spring initializr
+- Quarkus / Micronaut with startup time of < 1 sec.
+- + but they are still having BUGS despite copying insanely from Spring.
+-
+- #### Make two simpleeee applications.
+-
+- # New lesson
+- ## Recap
+- Lifecycles.
+- Factory for the objects.
+- Proxies, not the real objects.
+- Agnostic to Spring as possible, minimum invasion. Many defaults.
+- Starter-web.
+- Auto-config, @Configuration.
+-
+- WHen @Bean,
+	- when you want multiple beans.
+	- Or when you have no control over it.
+-
+- ## DevTools
+- WIll restart when you make changes and compile.
+- Hotswap during debugmode.
+- Monitors your `target/` folder.
+- Static files without restart.
+-
+- ## Application properties
+- Where can they come from:
+	- Commandline arguments (--name=John or -Dname=John)
+	- System environment variables
+-
+- ## Proxy
+- It will inject a proxy instead of "the real deal".
+-
+	- InterfaceProxies
+	- ClassProxies
+		- Subclass to override stuff
+-
+- **CGLIB** Enhancer.create(Maths.class, handler) --> handler is the InvocationHandler.
+	- It creates a dynamic subclass.
+-
+- Makes a proxy if you do some beautiful Spring stuff with it. Otherwise concrete class.
+- WHen you don't understand how Spring does it, it is a proxy.
+-
+- ### Cacheable
+- Cache inconsistency
+	- Invalidate cache
+	- update the cache.
+-
+- What if you have two instances and use cacheable?
+	- Two instances `--server.port=8081`
+	- Use redis for cache (for example), and set it in `application.properties`
+	- Single Central Cache. Such that there is one instance and no **stale cache**.
+	- Using events you let other caches know they have to update. Distributed cache.
+		- Distributed cache = no local caches,
+-
+- // Local methods don't get proxied. (Only in the bean method they do.)
+- How to work around this?
+	- AutoWire yourself, such that the proxy is used.
+	- use application context
+	- `AopContext.currentProxy()`
+	- Giving up proxies? Programmtic access via the `CacheManager`, Autowire it.
+-
+- @Cacheable
+	- Static data
+	- Dynamic data
+		- Through YOUR app
+		- outside of your control (so other data source that is not in your control)
+-
+- ## Aspects
+- `@Around` --> Allows us to be in the call stack
+- Avoid package patterns for Aspects.
+- `@Around("@within(victor.training.MyLoggedAnnotation)")`
+- MAKE THEM VISIBLE
+- Keep aspects light, not writing to DB and stuff, performance.....
+-
+- ## @Transactional
+- ACID
+	- A: Atomic - All or nothing
+	- C: Consistent - FKs are valid, NOT NULL.
+	- I: Isolated - You only see committed changes.
+	- D: Durable - After COMMIT everything gets written to a persistent storage.
+-
+- The proxy that starts a  transaction always ends that function.
+-
+- Transactional, only one transaction / connection per thread. So you ask one transaction, and nested (in another method call) you keep the same transaction and execute it. However, you can specify for some `@Transactional` that it `Propagation.REQUIRES_NEW`.
+-
+- ### Proxy, intercepts all methods.
+-
+- # Day 3
+- ## Postgres stuff
+- LOCK TABLE USERS --table-level lock - very brutal
+- SELECT FOR UPDATE * FROM USERS where id=1 --row-lock
+-
+- ## Transactions
+- microtype. ID Types. `TrainingId(StringId)`
+-
+- ## Web
+- Add converters for Spring, such that it knows how to convert it. That you can use to setup how parameters should be / the pathvariables.
+- For search you should always use `/search`.
+	- Use POST and use body to give all the required arguments.
+	- HOWEVER, POST SHOULD BE USED TO CREATE, syas the dogma.
+-
+- **PUT** aka OVERWRITE = **idempotent** = repeating a call does no harm.
+- **POST** should not be retried. is **NOT** idempotent.
+- Debouncing = to reject duplicating requests.
+- POSTS _can_ be risky.
+-
+- Accept header. Tell you what they want. XML for example.
+- Response and request headers. Sort of meta data.
+-
+- Public API `/search`, always follow REST. Do the extra effort.
+- Internal API you can deviate a bit.
+- Search in the URL. Such that people can copy the URL, makes it easier for them.
+-
+- Let clients create ID such that we can let them retry.
+	- OR USE QUEUES.
+-
+- ## Exceptions and messages
+- Shotgun surgery. (have to fix things in two places)
+-
+- Error reporting:
+	- 1. Throw error message from biz code
+	  2. throw CODE from biz code
+	  a) send the code to clients -> they will translate
+	  b) translate the code into human readable at the boundary of your code.
+-
+- How to report different error cases?
+	- i) subtypes of exceptions > overengineering.
+	- ii) throw new LocalizableException(<ENUM>);
+-
+- Global exception handler:
+	- Map exceptions, use the `messages.properties` and the `Locale` and the `enum` to get nice messages.
+-
+- ResponseEntity
+-
+- ## WebFlux
+- Every method has to return Mono or Flux.
+-
+- ## Security
+- AUTH can mean:
+- 1. Authentication : checks WHO you are 
+  In Picnic authentication is done via TOKENS.
+      external servcie (keycloak) that issues digitally signed tokens
+      are sent to us in incoming HTTP request Authorization: header.
+      In the token we can find: `username`, `roles`, `user details Full Name`, `language`, `expiration`, .
+   SEE LIST BELOW
+  2. Authorization : once we know you are JOHN, can John DO action X = roles / permissions.
+- Login things:
+    user/pass login form. better is to salt and hash the password. bycrypt.
+    user/pass in a header = "Basic authentication"
+    apiToken = to identify and allow client apps
+    2-SSL
+    by IP
+-
+- ## Current user / roles
+- `SecurityContextHolder.getContext().getAUthentication().getName()`
+- `ThreadLocal`.Storage to get the username.
+- In `SecurityConfig#configure`. You can see `mvcMatchers(DELETE, "api/trainings/*).hasRole("ADMIN")`
+	- Not smart, if you change URL you can forget this.
+- `@PreAuthorize("hasRole('ADMIN')")` --> SpEL.
+	- `hasAnyRole('1', '2', '3')`
+-
+- Role model, also in frontend a check on the roles, than you have to change in two places, which could be forgotten.
+- Permission Matrix
+- Feature-based authorization.
+	- Use with: `@PreAuthroize("hasAuthority('training.create'))`
+- A user has a jurisdiction on data. Only EU instead of also US.
+-
+- Put stuff in your TOKEN to prevent doing another call to get data on a person.
+-
+- `isUserALlowedToChangeTraining();` method.
+- Put it in a `class` and make it `public` and return `boolean`. Make the class a `@Component`.
+- SpEL `@PreAuthorize("hasAnyRole('ADMIN') and @userPermissions.editTraining(#id)")`
+-
+- ## Keycloak
+- Component-based search?
+- KeycloakPrincipal<KeycloakSecurityContext> keycloakToken.
+- Object will be returned where you do `keyCloakToken.getPrincipal()`
+-
+- MyPreauthorizedUserFilter.java
+	- To add an principle such that you can later retrieve it via the `getPrincipal()`
+	-
+-
+- ## Day 4
+- requestParameter = `?user=vrentea`
+-
+- EventListener.
+	- Do @AutoWired for `ApplicationEventPublisher`
+	- `publishEvent`
+	- Method with `@EventListener` simple method annotated with <--. Parameter is then the Event.
+- By default it notifies all event listeners, and wait `synchronously` for all to finish. This is **different** from RabbitMQ.
+- `@TransactionalEventListener(phase = TransactionsPhase.AFTER_COMPLETION)` --> After it succeeded, you want to do resource cleanup. Or sent a notification.
+-
+- Next step, would be Async because then not waiting)
+-
+- @Async would make it run in parallel. (WebFlux, how is it there)
+- `@EnableAsync` some things have to be enabled using an annotation. Cache, Async and Scheduled.
+-
+- Cloud streams, means messaging on queues.
+- @StreamListener, will listen to queues, hooks handler
+-
+- `Future<Beer> futureBeer = executor.submit(() -> barman.getOneBeer());` anti-pattern in WebFlux.
+- `CompletableFuture` is a `Mono` in disguise
+- Two `CompletableFuture`s , `futureBeer.thenCombine(futureVodkat, (b, v) -> new UBoat(k,v))`
+-
+- `parallelStream()` , we run stuff in JDK part of threads.
+-
+- Thread Starvation, block everything because of slow network call (e.g.). People have to wait with critical paths.
+-
+- Throttle control. To not overload governments. Rate limiting.
+	- Beer foam problem, vodka 8 at the time.
+-
+- Someone in other thread throws error.  Thrown in CompletableFuture, then it gets lost.
+- Never throw exception or block in methods that returning Mono/CF.
+-
+- Exceptions DANGEROUS in async stuff.
+- Dont block commonpool.
+- Bean ThreadPoolExecutor,
+-
+- victorrentea/unit-testing Picnic_2022-03
+-
+- ## Testing (general)
+- Layers (pyramid):
+      e2e
+    component / integration
+  unit testingggg
+-
+- Blackboxing at the controller level. Put it in and check output.
+	- Specific logic you do in unit tests, such that you can check the 100 specific rules (e.g.)
+- Honeycomb | Microservices Testing Strategy
+- Integration tests; I hope it is their fault.
+- Failed Test Tolerance. (if it fails occasionally)
+- UnitTests HONEST tests. If it fails, you should fix it.
+- Prefer honest tests, while they are slow, run them nightly.
+-
+- WT1 WT2 run in parallel. (Warehouse type 1)
+- Use 1 database, add an ID for everyyyyy call that you do.
+- OTHER OPTION; mock server have seperate URLs.
+-
+- ## @SpringbootTest
+- activated profiles
+- DONT COPY `application.properties`,  use a `application-db-mem.propertie`s and enable the `@ActiveProfiles("db-mem")`.
+- Testcontainers should be the default.
+-
+- Clean before. What if someone forgets. YOu want to clean before you.
+-
+- `@Sql(value="classPath:/sql/common-refernce-datasql", executionPhase = Execution.Phase.BEFORE_TEST_METHOD);`
+-
+- Always think, can I get my Island of data? Or is the DB full of shit?
+- @DirtiesContext --> blows up Spgin > has to recreate.
+- Do not use cleaning for RELATIONAL DB > Use @Transactional instead.
+- USE when you messed up with the configuration of the spring context (@Conditionalon....)
+-
+- Testing with relational databases; use @Transactional. It runs in same transaction and it rolls back at the end.
+- DB Remains CLEAN! Multithreaded tests are possible.
+-
+- ### Last part
+- @Mock @Bean @MockBean MockitoMock and replaces the real bean.
+- You still have a mock but are now SpringBootTest.
+- Mockito mock is already a Proxy. Cannot proxy a proxy.
+- `ArgumentCaptor` ? DONT USE IT. -->
+-
+- Context reused if the settings are the same.
+- Spring is SLOW!
+-
+- Speeding up @SpringBootTests
+	- Tune JVM --noverify -ea -mx2g -XX:TieredXXXX
+	- Disable unused parts of spring;
+		- SLICE tests.
+		- WEBENVIRONMENT= NONE
+		- @WebMVCTest
+		- @DataJpaTest
+-
+- # Recap
+- @AutoConfigureMockMvc // start Spring without tomcat and emulates HTTP requests to controller
+- MockMvc use to test controller.
+-
+- `@MockBean` mocking a bean inside the context
+- `@Transactional` // ONE TRANSACTION TO RULE THEM ALL
+- Think HONEYCOMB
+-
+- Class in JAR, use @Bean, add @Value to add arguments in there.
+-
+- ResponseEntity<> | e.setHeader OK | FILTER
+-
+- Current transation start |  First method with @Transactional. What if someone does `REQUIRES_NEW`? [[Apr 1st, 2022]] PROBLEM,BANG!
+	-
+- How cleanup after transaction commits? `@TransactionalEventListener()`
+-
+- Overwrite stuff in `application.properties`
+- SecurityContextHolder. returns object, get principle.
+- Cache difficult when it changes, especially in other services.
+-
+- @Schedule. @Async, @Time.
+-

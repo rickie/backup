@@ -1,0 +1,22 @@
+-
+- Goal:
+	- Want to get insight into how people use RabbitMQ.
+	- Insight into their knowledge about the current MS setup.
+	- Kafka related?
+	-
+- **Possible questions:**
+	- Are they aware of when / where they can lose messages.
+		- Do you have any idea whether you are actively loosing messages?
+	- How bad it is for your system to lose messages?
+	- Are your messages idempotent? / Can you handle duplicate messages.
+	- Reliable on "in order" message delivery.
+	-
+- Kafka related:
+	- Are there situations where Kafka would be better suited for your setup?
+	- Do you have any Kafka related suggestions?
+-
+- # in meeting
+- Messages that are essential.
+- Do they use retries? While doesn't really work.
+-
+- Lists the queues and different message types.

@@ -1,0 +1,146 @@
+- // Sometimes hard when to ask which questions in a meeting with Braze. Like with the API, we have questions but you don't want to place the wrong ones IMO.
+-
+- Asked to do interviews.
+- Nieuw abstract maken voor eenn talk. --> Dit mag, 2 uurtjes ofzo.
+-
+- Out of office support?! Regels, ideeen, wat zijn de afspraken?
+-
+-
+- Setup retrospectives;
+- # 2023 Stats
+- https://github.com/search?q=is%3Apr+author%3Arickie+merged%3A2023-01-01..2024-01-02&type=pullrequests --> 673 PRs created.
+- 524 PRs in Picnic Org
+- 371 merged.
+- 281 PRs merged for Java stuff.
+- https://github.com/search?q=is%3Apr+created%3A2023-01-01..2024-01-02+org%3APicnicSupermarket+reviewed-by%3Arickie&type=pullrequests&p=3
+-
+- 1.9k reviewes.
+- reviewed Java PRs 377
+-
+- 14 conferences 2023;
+	- Some stats of that.
+- X conferences 2024
+-
+- Impact error-prone-support
+	- Mentioned 20x during interviews
+	- Asked for ...
+	- Asked for Java Magazine
+	- Many people seeing them
+	- Moderne using our Refaster rules
+	- Checkstyle; Caffeine; Uber;
+-
+- Promoting tools like:
+	- Renovate
+	- Error Prone and Refaster
+	- OpenRewrite
+	- Spinnaker
+-
+- Managed Gijs
+-
+- Code contributions in 2023:
+- 409 PRs created: [https://github.com/search?q=is%3Apr+author%3Arickie+merged%3A2023-01-01..2024-01-01&type=pullrequests](https://github.com/search?q=is%3Apr+author%3Arickie+merged%3A2023-01-01..2024-01-01&type=pullrequests).
+- 281 Java PRs created and merged.
+- 1900+ PRs reviewed: [https://github.com/search?q=is%3Apr+created%3A2023-01-01..2024-01-02+org%3APicnicSupermarket+reviewed-by%3Arickie&type=pullrequests&p=3](https://github.com/search?q=is%3Apr+created%3A2023-01-01..2024-01-02+org%3APicnicSupermarket+reviewed-by%3Arickie&type=pullrequests&p=3)
+- 377 Java PRs reviewed.
+  
+  Speaking contributions (14 talks):
+- 23-2 Picnic meetup [https://www.meetup.com/meetinup-picnic/events/291446725](https://www.meetup.com/meetinup-picnic/events/291446725)
+- Rabobank internal meeting Tech House session
+- 1-3 ABN Amro [https://www.meetup.com/nl-NL/abn-amro-developer/events/291461961/?isFirstPublish=true](https://www.meetup.com/meetinup-picnic/events/291446725)
+- TU Delft Lunch Lecture Christiaan Huygens
+- Victor Rentea: [https://www.youtube.com/watch?v=KPNimQMH0k4](https://www.meetup.com/meetinup-picnic/events/291446725)  (2.5k views)
+- Spring I/O: [https://www.youtube.com/watch?v=-47WD-3wKBs](https://www.meetup.com/meetinup-picnic/events/291446725) Placed 128 of the most viewed Java conference talk on [Reddit](https://www.reddit.com/r/java/comments/1aweh4j/all_java_conference_talks_from_2023_ordered_by/).
+- Devoxx Poland: [https://www.youtube.com/watch?v=8Fx2lx9vAtY](https://www.meetup.com/meetinup-picnic/events/291446725)  average rating of 4.64 / 5.00.
+- J-Spring: [https://www.youtube.com/watch?v=TA3tyOwMRNk](https://www.meetup.com/meetinup-picnic/events/291446725) the talk was number 4 in the top 5 best rated talks. 4.60 / 5.00
+- 15-8 DevBcn: [https://www.youtube.com/watch?v=NdSJ6pvJGKo](https://www.meetup.com/meetinup-picnic/events/291446725)
+- 8-6 PlatformCon: [https://www.youtube.com/watch?v=6llnrUtVlrE](https://www.meetup.com/meetinup-picnic/events/291446725)
+- JDD: [https://www.youtube.com/watch?v=vKz8TszHWdw](https://www.meetup.com/meetinup-picnic/events/291446725)
+- JFall pre-conference workshop
+- Meetup Picnic [https://www.meetup.com/meetinup-picnic/events/296926809/](https://www.meetup.com/meetinup-picnic/events/291446725)
+- ING 19 december - internal event
+  
+  During the first half a year, I mentored Gijs de Jong, who was a working student at that time.
+  
+  Result of investing time in Error Prone Support:
+- Getting an invite to the TNO ESI group for Software Maintenance and Rejuvenation.
+- Being able to write two articles in the NLJUG Java Magazin
+- Getting invited to conferences.
+- Open-source contributions.
+- 20+ people that were going through the interview process at Picnic and knowing the project. Some even mentioned it as partial reason of looking into Picnic specifically.
+- Getting two people to do a Lunch & Learn @ Picnic.
+- Collaboration with Moderne.
+  
+  Stewardship of multiple different tools within Picnic (and within our team):
+- Error Prone (Support)
+- OpenRewrite
+- ArchUnit
+- Spinnaker
+- ```
+  ```
+-
+- ## L3 stuff
+- Domains authority;
+- Really doing design of a feature completely;
+-
+-
+- # General feedback Enric L3
+-
+- ## General high level feedbac on L3
+- Take over more of cross team responsibilities.
+- For example, handle the check in with migration of Article issue service.
+	- Ideal case, Enric wouldn't need to be here. I can take it over, look into it, discuss it with Steffen or Enric and handle it for them.
+-
+- **Extra mile**, what would this look like; multiplier so think about how is this used.
+	- When developing; trying to see what are the links to other products
+	- During discussions; some other people bring up topics.
+	- Flag which use cases which should happen in what area.
+		- **Helps to grow and develop abstract thinking.**
+		- Ties in with the `components`, abstract thinking on different levels.
+		- High levels flows of data. Structurings methods, same thinking at component level.
+-
+-
+- ## Thinking area
+- Also keep a bit more top of mind, **proactively doing the check of priorities**. The discussion we had with Penny.
+- When new topic comes up; how does it fit in our plan/goals. Think about how does it fit and check that.
+- Make sure to have a state somewhere where it's easy to see what the current priorities are.
+-
+- ## Execution
+- Continue to practice with prod debugging f.e.
+- Make Braze more reliable. (make product more mature) --> try to make it an example application for the rest)
+-
+-
+- ## Talk 22 dec
+- What are my goals?
+	- End goal?
+	- I want to learn a lot
+	- I like responsibility
+	- TEchnologies
+	- If I go, can I go back.
+-
+- You learn by playing.
+-
+- # 25 jan
+- Feel I'm doing some more of the project management as well. More discussions with Penny.
+-
+- How can I grow? You mention last time discuss more on a generic/abstract level.
+- Are there other topics?
+-
+- I identified for myself; being able to more concisely and concretely explain things. Aka using less words to achieve the same.
+-
+- How should I participate in the team?
+-
+- How do we handle EPS?
+- ArchUnit thingy.
+-
+- Should I give more context; from time to time I feel I didn't provide enough and you give some extra.
+-
+-
+- # 8 feb
+- Sometimes you already give the answer :)
+- Where others might benefit from some ideation.
+-
+- We both try to read L3 stuff.
+-
+	- Try to get into a subteam state with Dirk and Jakob
+-
+-

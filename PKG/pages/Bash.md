@@ -1,0 +1,2 @@
+- Use `echo $?` if you want to know the exit code of a command that failed in your terminal.
+-

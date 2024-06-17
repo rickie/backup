@@ -1,0 +1,136 @@
+- Previous one #[[Stephan Questions / 2023-10]]
+-
+- Return type of the refaster rule matters.
+- Vragen tussendoor; moeten gaan staan.
+- Beginnen met een eigen introductie en met de groep wat vragen;
+-
+- Introduction
+- Error Prone + Refaster
+- Refaster in depth
+- Do rules together
+	- Show slide; show example?
+- Error Prone
+	- only show the overview a bit.
+-
+-
+- Notes
+- expressivity;
+- method vs. method invocation
+- CharSequence vs String;
+	- Expressie waarop je isEmpty aanroept dat het een CharSequence is, met cast.
+	- van de isempty
+-
+- Code with me. with live audience.
+-
+-
+-
+-
+- # We moeten weten hoeveel impact het heeft
+-
+-
+- PR from Benedek.
+	- Let's create a mmessage with the three examples.
+	- Ensure we also have the empty line one.W
+	- Perhaps we should have a flag about moving types. Then we can push it for sure.
+-
+- Mutation testing....
+-
+- https://github.com/PicnicSupermarket/error-prone-support/actions/runs/8846295338/job/24294434919
+-
+- ~~https://github.com/PicnicSupermarket/picnic-runner-backend/pull/2656#discussion_r1580581832~~
+-
+- ## 20th of April?
+- Failing update of the integration tests.
+- Update the first example of the workshop branch, the one you do.
+- One in bulgaria
+-
+- modernizer, docgen, pomchecker,
+- Windows werkt niet docgen.
+-
+- ## Discuss 26 or something
+- People need to move between the chairs and tables multiple times.
+- How do we divide the content?
+-
+- Discuss the text blocks PR
+-
+- Refaster anyOF van de String.value van Catalin
+	- ```
+	  return Refaster.anyOf(String.valueOf(data, offset, count), String.copyValueOf(data, offset, count));
+	  ```
+- Zou de Open source code moeten werken?
+- Blog
+-
+-
+- # 5 maart
+- \PSM not the place for these Refaster rules?
+	- otherwise Store would be the place.
+- ALso support mvnd in our scripts?
+	-
+- OpenRewrite preconditions
+- Price model
+- WEbsite in URL
+- Hoe maken we nou echt duidelijk waarom consistentsie zo belangrijk is?
+	- Switchten van teams, geen onboarding
+- Geprobeerd in PSM te krijgen maar geeft wat shit.... De Refaster rules.
+-
+- ### In de presentatie
+- Pattern matching; geen discussies; dingen die niet functioneel zijn; mensen that don't care. People that do care; shouldnt care is niet waar. Mensen die het netjes willen doen. The ones that do care dat het voor hun gedaan wordt.
+- Niet alleen in Picnic; cHeckstyle has the same. All the static analysis in the world. Small team; consistency.f
+-
+- # 26 feb
+- Mutation testing problemen, how to solve.
+- Empty line bug fix for checkstyle checkie.
+- Per module een tab hebben op de website?
+- From [palantir](https://github.com/palantir/gradle-baseline/blob/develop/baseline-error-prone/src/main/java/com/palantir/baseline/errorprone/BugCheckerAutoService.java), do we want this: https://github.com/palantir/gradle-baseline/blob/develop/baseline-error-prone/src/main/java/com/palantir/baseline/errorprone/BugCheckerAutoService.java
+- Create a RR for this: https://github.com/palantir/gradle-baseline/blob/develop/baseline-error-prone/src/main/java/com/palantir/baseline/errorprone/ImmutableMapDuplicateKeyStrategy.java
+-
+-
+- ## 20 dec 2023 nog
+- The Java Magazine article
+- The ING presentation
+	- Consistency explain?
+		-
+- Long term vision
+-
+- # 10 jan
+- Die language injection hoe doe je dat
+- Volgende dingen met Tim zn PR
+- Update Gijs
+-
+- Slack testcontainers.
+-
+- Pattern matchen.
+- micro decisions; frictie; consistent.
+-
+- Dingen automatiseren, dan schalen.
+- user persepectief, makkelijk onboarden. betere docs. testsetup.
+- maintainable;
+-
+-
+- ## 22 jan
+- ~~Kijken naar Checkstyle 10.12.4 update~~
+- ~~Nieuwe workshop!? Titel + setup~~
+-
+-
+- ~~Mongodb filters.empty toveoegen die willen we importen; staticimport.~~
+- ~~ZERO and ONE weghalen.~~
+- ~~Mono and Flux empty;~~
+-
+- experimental-checks
+- `error-prone-coding-guidelines`
+- README; toevoegen aan de self check.
+- Fix enum case for StaticImport.
+-
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/992#issuecomment-1916899273
+-
+-
+- ## Discuss
+- Release
+- Let's discuss message from Tim
+- ArchUnit is geweldig voor EPS.
+	- Stephan zie je use case Arch unit, ja eigenlijk wel, moetOnlineDoc hebben of zelfde naam hebben in bugpayyern name. Of in de RefasterRuleTest zitten.
+- Bogdan
+-
+-
+- https://github.com/PicnicSupermarket/error-prone-support/releases/tag/v0.15.0

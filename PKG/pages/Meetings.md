@@ -1,0 +1,15 @@
+- POM meeting request David Hoepelman
+	-
+- JPLA `messaging-service` 2.0`
+-
+-
+- ## Meeting GraphQL
+- DGS; Spring GraphQL
+	- Many unknowns.
+	- Spring advantage that we use the ecosystem, we should verify that.
+	- It's still relatively unknown.
+		- One way out of that; minimal way to try it out.
+		- Run in DEV? Local instance?
+-
+-
+-

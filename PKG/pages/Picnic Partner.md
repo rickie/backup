@@ -1,0 +1,9 @@
+- How much does it cost?
+- What if you quit?
+- What if you want to in multiple periods?
+- Is it a one time thing?
+-
+- I want to think about it.
+-
+-
+- 9.5k

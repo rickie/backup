@@ -1,0 +1,37 @@
+- Interesting: #[[TestNG -> JUnit]]
+-
+- ## Currently doing:
+- Verschillen van de bestaande annotaties.
+- @Tag van junit, kan de naam in
+- @Test annotatie op class level.
+-
+- # DINGEN
+- README opzetten
+- Script zie ik nog niet
+- Is PITEST actually completely running with green build
+- Doe een run;
+- Grote testen toevoegen?  Met edge cases?
+-
+-
+-
+- # Feedback
+- Gestructureerd uitleggen dat ie kan groeien in comments geven.
+-
+- Bespreken met Nathan:
+	- Gijs wil wellicht ook wat andere dingen doen.
+	- Meer Spring leren.
+-
+- # Current TODO lijst
+- DONE Gijs: BeforeAll BeforeEach enzo.
+- DONE Gijs: Nog een PR maken met nieuwe script.
+- DONE Gijs: XXX's in de code.
+- TODO GIJs: Map optie van DataProvider.
+- TODO Gijs: Guava toevoegen; XXX limitaties in de README. Feedback verwerken voor Dima.
+-
+-
+-
+- Feedback 28 April;
+	- Concreter zijn met wat je gaat doen vs wat je niet gaat doen. Verwachtingsmanagement.
+	-
+- Wat is het plan voor hierna?
+-

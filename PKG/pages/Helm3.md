@@ -1,0 +1,12 @@
+-
+-
+- For running Helm3 on rule-engine and rolling back:
+	- `helm3 list --all --kube-context=picnic-de-dev -n rule-engine`
+	- helm3 history rule-engine --kube-context=picnic-de-dev -n rule-engine
+-
+- Stuck; got this error message: `UPGRADE FAILED: another operation (install/upgrade/rollback) is in progress`
+- https://picnic.atlassian.net/wiki/spaces/INF/pages/4353131091/Stuck+helm+release+in+status+pending-upgrade
+	- kubectl get secrets -n rule-engine | grep rule-engine | grep 81
+	- kubectl get secret -n rule-engine sh.helm.release.v1.rule-engine.v81 -o yaml > helm-state-81-backup.yaml
+	- kubectl delete secret -n rule-engine sh.helm.release.v1.rule-engine.v81
+	-

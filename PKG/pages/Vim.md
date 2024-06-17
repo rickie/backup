@@ -1,0 +1,6 @@
+- `:%s/REFASTER_NAME_PATTERN/NAME_PATTERN_ARGUMENT/`
+- Globally change.
+-
+-
+- Type / or : and do arrow up.
+-

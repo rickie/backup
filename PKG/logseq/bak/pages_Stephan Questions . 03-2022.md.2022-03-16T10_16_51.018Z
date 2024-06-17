@@ -1,0 +1,12 @@
+title:: Stephan Questions / 03-2022
+
+- Previous: [[Stephan Questions / 02-2022]]
+-
+- Code review for `RefasterCollectionValidator`
+	- https://github.com/PicnicSupermarket/error-prone-support/compare/rossendrijver/junit_extension_refaster_tests?expand=1
+	- See: [[Refaster test extension]]
+- `unusedVehicles.removeAll(getVehicles());` --> `getVehicles().forEach(unusedVehicles::remove);` code didn't work. `picnic-distribution`.
+- Q: Would a Refaster template make sense here? 
+  `Mono.just(x).map(X::method) -> Mono.fromSupplier(x::method).` [link](https://github.com/PicnicSupermarket/picnic-platform/pull/8660#discussion_r811888338)
+- Is it OK to close all `Dependabot` PRs in EP fork?
+-

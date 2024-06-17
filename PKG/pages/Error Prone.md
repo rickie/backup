@@ -1,0 +1,6 @@
+- ~~The PR for `java.lang.Object` to the `TypesWithUndefinedEquality`~~
+-
+- Error Prone setup on Gradle, [link](https://github.com/uber/NullAway/blob/4bd9e7886193932345ab2075141b15e589932cee/nullaway/build.gradle#L101-L115).
+-
+- Kotlin support: https://github.com/google/error-prone/issues/623
+-

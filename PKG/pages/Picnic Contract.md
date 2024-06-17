@@ -1,0 +1,6 @@
+- 3 months
+-
+- Normal thing is one
+- My aunt works in HR and says it's very unusual
+- I have no plans of leaving whatsoever, but this is too much.
+-

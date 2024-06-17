@@ -1,0 +1,140 @@
+title:: Stephan Questions / 2023-01
+
+-
+- TODO https://github.com/PicnicSupermarket/error-prone/pull/40
+-
+- Inline `CompilationTestHelper`s.
+- https://github.com/PicnicSupermarket/error-prone-support/pull/442#pullrequestreview-1235659878
+- TODO Inline all helpers and create a ticket to fix this.
+-
+- https://github.com/google/error-prone/commit/0d1dba2dec52f4764920bed21e5a0956454a0d2e
+-
+- ~~Benhasali problem I can't go on Friday....~~
+-
+-
+- DONE `newInstance` --> BadImport
+- Let's go KEEP ==> Created ticket~~#TODO Rick fix keep.~~
+-
+- ~~Defer en vraag aan hiring pipeline of Benedak er in zit.~~
+-
+- ~~Setup besrpeken.~~
+-
+-
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/448#issuecomment-1373414899 --> Ik snap het niet
+-
+-
+- Hebben over de presentatie
+- hebben over wat cool is om te demoen.
+- Kijken naar de setup in het demo project.
+- Nadneken over nice open source one.
+- Heb ik al die packages nodig in de demo project?
+-
+-
+- ~~Mock PRs van Pieter.~~
+-
+-
+- ---
+-
+- ```
+  static final class MapGetOrDefault<K, V, T extends K> {
+  The example is not good tho.
+  ```
+- ~~Moet het niet zijn T extends K?~~
+-
+- ----
+- Name settled: `documenation-support`
+- Settled: `extractor`.
+-
+- ~~`isSubType`~~
+-
+-
+- Kijken naar Gravitee. Update geven....
+-
+- Worked on docgen.
+-
+- release.
+-
+-
+- CaseKind: https://github.com/google/error-prone/issues/3553
+-
+- Open PRs bespreken?
+-
+- Thread Igor bespreken.
+	- Reformatten zodat alles op een specifieke indentatie zit. Dan doet 'ie matrix formatting. Gebruiker moet formatter gebruiken.
+-
+- kortste versie;
+- GJF
+- Builder.
+-
+- Context afhankelijk.
+- Kost veel tijd.
+-
+-
+- ValueSource? Kunnen niet mini beetje laten?
+-
+- Kan je me door de checkstyle integration test heen lopen?
+-
+-
+- Draaien met 19j; als je die test runt; classcaset, hij is geen literal.
+-
+-
+- ---
+- Kijken naar `error-prone-demo`. Wat kan er weg? Zo min mogelijk hebben.
+-
+- Can I open a PR with fixing Error Prone issues? in Guava.
+-
+- ---
+-
+- Walk me through the integration-test files.
+-
+- For documentation stuff, determine how to proceed. ANnotations?
+-
+- WHich Bugpatterns would be nice to explain (preferably not solvable by different tools)
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/434
+-
+- Walk through new PR as well.
+-
+- Discuss Gijs' PR?
+	- metaBuilders
+	- set misschien weghalen?
+-
+- overloads hebben?
+- TestNGscanner; dataprovidermetadatabuidler put met string. Die naam is dat genoeg.r
+- Key bij string. Is het ambigue? Comment toevoeegen.
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/491#issuecomment-1423729829
+	- Follow up work
+-
+-
+- ---
+-
+- @Var how does that work, does it add it itself.
+-
+- The script.
+-
+-
+- cHECKSTYLe cimmuabitility thing upstream.
+-
+- drop the EPS version in maven config boven; hij is al beneden.
+- drop identityconversion
+- checkstyle
+- shellcheck (CI)
+- SHellcheck GHA.
+-
+-
+-
+- Discuss things that should renamed BugPatterns.
+-
+-
+- Checkstyle fixen....
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/472#discussion_r1111639113
+-
+-
+- Module moven.
+- Errorpronecontrib SourceCode dingen zijn juist nuttig overal.
+-
+- Website prioriteiten.
+-

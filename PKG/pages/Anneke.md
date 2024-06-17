@@ -1,0 +1,82 @@
+- Questions:
+	- ~~Eerder aflossen~~
+	- ~~Netto ~~kosten~~~~
+	- ~~Extra 4k inleggen~~
+-
+- Hypotheek word overgenomen door andere verstrekkers.
+- Rente is aftrekbaar.
+- 6k van de 8,6k kan je bijvoorbeeld terugvragen.
+- 1177 - 906
+-
+- De 7.5 is aftrekbaar, dus wellicht 2.5-3k terug in mei.
+- Elke 3 jaar gesprek voor update gesprek kijken naar rente.
+- Altijd 27k aflossen elk jaar, maar alles altijd mag aflossen omdat de rente hoger is wss.
+- Rente hoger is mag je alles aflossne.
+-
+- WGA 70 , 80 of 100? --> Nog vragen
+	- 1 ste jaar 100%
+	- 2de jaar 70%
+-
+- 25 per maand elke 10.000 , rente en aflossing
+	- Als ik 10k aflos, gaat er 25 euro per maand af.
+-
+- www.svn.nl
+- Duurzaamheidslening
+- (wss 1%) rente
+-
+-
+- btw terug van zonnepanelen bij aangifte.
+- Beginnen metzonnepanelen kijken
+- Vragen wat kost het.
+-
+- Machten voor bank --> Mailtje gestuurd.
+-
+-
+- ~~Aanleveren~~
+	- ~~Afschrift met 7.5k erop~~
+	- ~~Bankafschrift --- Regiobank van de betaal rekening~~
+-
+-
+- Adviesrapport
+- Finaal bod
+	- niet meer terug kunnen
+-
+- Vragen of de bankgarantie op 30 september kan.
+- Vraag ik aan Anneke om bankgarantie, 270 euro betalen, wel aftrekbaar.
+-
+-
+- Het word afgeschreven van: NL44 RBRB 0898 2924 76, REGIOBANK lopende rekening.
+-
+-
+- Klant werft klant. --> 50 euro
+- Ik kreeg vgm ook nog ergens 150 van terug? Wellicht de 270 euro die aftrekbaar is bankgarantie?
+-
+- 500 euro terug van de kosten. 2500 euro in rekening gebracht. ALs ik daar geweest bent maakt ze 500 euro over.
+-
+-
+- Geen gas maar wel belasting wel betalen;
+- Netbeheer vragen om het gas af te sluiten?
+- 61,50 voor het stroom
+- 1600kwH stroom
+- 118 euro, warmte, stadsverwarming. Vaste kosten zitten er ook bij.
+- http://aansluitingen.nl/
+- Stedin
+- 088 896 3963
+- Klant nummer: 527 388 95
+-
+- Er is nog gas.
+- verwijderen gratis. 98 euro 12 jaar.
+-
+-
+- ## Anneke tekenen
+	-
+	- Mag je verhuren?
+	- Ik ga ervan uit dat in die gezamnelijke opstal ook glasdekking zit
+	- Vergoeden van keuken of badkamer; standaard bedragen. Badkamer b.v. 10.000 euro.
+	- Afspraak maken, boiler en balkon schoonmaken.
+	- 2000 euro inhouden.
+	-
+-
+- Het is een beetje gek wat betreft onderhuur;
+	- "Indien de woning wordt gebruikt voor onderhuur - conform de reglementen van de kredietverstrekker is dat niet toelaatbaar - dient een kopie van het pastpoort van de daadwerkelijke bewoners afgegeven te worden bij het bestuur van de VvE. Het is bij calamiteiten noodzakelijk te weten wie de woning bewoond"
+		-

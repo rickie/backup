@@ -1,0 +1,2 @@
+- Bash commands:
+	- for i in $(seq 1 7); do <command1> && <command2>; done && <final command?>

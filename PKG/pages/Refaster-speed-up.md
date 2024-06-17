@@ -1,0 +1,316 @@
+- [[error-prone-support]]
+- ## New ideas for improving the performance.
+- Based on method invocation overload, can we do something with the comma's? Not really...
+- Constants checken.
+-
+-
+- ## Latest numbers:
+- Current version on develop
+	- 03:25 min
+	- 03:39 min
+	- 03:32 min
+	- --> Rustige laptop
+		- 03:09 min
+		- 03:20 min --> Met nog minder doen (lees Slack)
+-
+-
+- Nieuwe improvements op 23 september
+	- 01:30 min PSM -DskipTests.
+	- 01:34 min
+- Without Refaster
+	- 01:11 min
+	- 01:06 min
+- Platform build met Refaster enabled:
+	- 04:48 min
+	- 04:29 min
+- Platform zonder Refaster
+	- 03:13 min
+	- 03:25 min
+-
+- ---
+- Huidige develop; vs straks PSM met Refaster aan en alle checks.
+-
+- PSM met Refaster aan (stock)
+- Nieuwe EPS met reflectie
+- Nieuwe EPS zonder reflectie
+-
+- Update:
+	- 02:44 min
+	- 01:57 min
+	- 02:00 min
+-
+- Full build:
+	- 13:23 min (no improvements, command:  `mvn clean test-compile -Ppatch,error-prone -Derror-prone.refaster.name-pattern='.*' -Dverification.skip`)
+	- 10:09 min (faster algorithm)
+	- 13:48 min....... `mvn clean test-compile`
+-
+-
+-
+-
+- # 12 Sept avonds.
+- met current developer en alle  Refaster dingen aan.
+	- 18:49 min
+	- 18:16 min
+-
+- Dit is met reflectie refaster
+	- Total time:  14:07 min
+	- 14:46 min (klein beetje surfen aan het einde)
+-
+- Zonder Refaster aan...
+	- 11:01 min
+-
+- 06:03 min tweede keer? parallized
+- 06:37 min  ( kleine beetje lop laptop)
+- 06:51 min  (bezig op laptop...)
+-
+- Full build met parallellized
+	- 6:55
+	- 07:03 min
+-
+- ## Short talk with Stephan
+- Children is templates in het geval van de Ranking thing.
+-
+-
+- een pad is in principe een template van begin tot eind, van root tot leaf.
+- ImmutableSet<String> is set van refaster templates, andere optie is set van set van strings van wat in de template voorkomt.
+- regel 209.
+-
+- RefasterRule naar set van string.
+- edgeExtractor IS<String> ; dit is in register. Een innerloop om het werkend te kijrgen. Maar; Refaster.anyOf cases het beste; maar; xtra moeite; splitten refaster template uit, zodat we van 1 template met n befretemplate
+-
+- in een set doen en dan duplicates eruit halen; maar dat zal heftig zijn; de dedpulication; deep equality. Dat kan later; IdentityHashMap;
+-
+- De construction van de "tree" kan hergebruikt worden.
+- Het ophalen van de identifiers is ook al goed zo.
+-
+- ## Future?
+- Willen we compile time constants ook toevoegen? (Using the `CompileTimeConstantChecker`?)
+	- stream.count() == 0
+-
+-
+- ## Refaster optimization #error-prone-support #[[Error Prone]] talked about Ranking stuff first time.
+- RankingContext is matching kant, which ones
+- 1 rankingconfig van een rankingcontext.
+-
+- we willen subset van refaster templates matchen for given sourcedcode.
+-
+- rankingContextKeys is de code die we willen matchen, alle tokens.
+- extractContextKeys() refaster kant / context.
+-
+- Node<T>      T is dan Refastertemplate.
+- selectRefasterRules(gegeven de srourcecode/compilation unit.) returnt een collectie van subset vd refaster rules die gematcht zijn.
+-
+- evaluate 140 line, is "DE" code.
+- List<RefasterRules>
+- gegeven tree
+-
+- ranking is conjuctie
+-
+- refaster is disjunctie. - refaster any of en meerdere beforetemplates.
+-
+- We weten al welke matcht, for iedere beforetemplate, maak ik een nieuwe RefasterRule, waarin ik met alles hetzelfde, en maar 1 beforetemplate zit. Dan kan je heel specifieke subset doorgeven. Bespaart matching.
+-
+- ### PVA momenteel;
+- Zet log statements neer en kijk wat er gebeurd.
+- Zorg dat er een boom structuur is die opgebouwd kan worden
+-
+- Link naar RankingService PR https://github.com/PicnicSupermarket/picnic-platform/pull/8871
+-
+-
+- # Open questions;
+- `flatMap......flatMap` should that also be a two deep thing or not?
+- Also take into account compiletime constants?
+-
+- Output nu:
+- ```
+  identifierCombinations: [[flatMapToLong, flatMap]]
+  identifierCombinations: [[flatMap, filter]]
+  identifierCombinations: [[flatMap]]
+  identifierCombinations: [[flatMapToLong, map]]
+  identifierCombinations: [[anyMatch], [allMatch, negate], [filter, findAny, isEmpty]]
+  identifierCombinations: [[count], [findFirst, isPresent]]
+  identifierCombinations: [[sorted, findFirst]]
+  identifierCombinations: [[Streams, concat]]
+  identifierCombinations: [[noneMatch], [filter, findAny, isPresent]]
+  identifierCombinations: [[flatMapToLong, filter]]
+  identifierCombinations: [[noneMatch, negate]]
+  identifierCombinations: [[allMatch]]
+  identifierCombinations: [[LongStream, rangeClosed]]
+  identifierCombinations: [[flatMap, map]]
+  identifierCombinations: [[Streams, concat]]
+  identifierCombinations: [[count], [findFirst, isEmpty]]
+  sourceIdentifiers: [tech, picnic, errorprone, bugpatterns, com, google, common, collect, ImmutableSet, Streams, java, util, OptionalLong, function, LongPredicate, stream, LongStream, Stream, RefasterTemplateTestCase, super, Override, of, class, rangeClosed, concat, flatMap, v, filter, n, flatMapToLong, lang, Integer, map, Boolean, count, findFirst, isEmpty, isPresent, sorted, i, anyMatch, allMatch, pred, negate, findAny, noneMatch]
+  
+  ```
+-
+-
+- if statement NIET gebruik sortering.
+- Else statement WEL.
+-
+- from root to leaf must match.
+- in if statement; loopen we over alle transities. om in 1 van de leaves die reachable from transitions; moet die transitie/edge moet voorkomen in candidate edges = compilationunit.
+-
+- else, kijkt eerste candidate edge. die bepaalt hoe je je transitie doet.
+	- als ik een directe child transitie heb voor de eerste candidate edge. gaan we recursief verder. Anders ga je nog een keer proberen, maar dan eerste element niet checken.
+-
+- 274 eentje naar beneden met element weggeegooid.
+- 276 eerste element gooi je weg, dan blijf je op het zelfde niveau.
+-
+- EP fork gebouwd. EPS gebouwd. Vervolgens PSM als Platform aangepast zodat ze bouwen met EP zelf.
+- Niet compatible met laatste versie van EP, dus EP 2.10 gebouwd.
+-
+- PSM en platform GroupId aanpassen en versie.
+-
+- # Performance
+- ### PSM
+- Met changes:
+	- Total time:  51.523 s
+- Zonder changes (nu master):
+	- Total time: 43.592 s
+- ### Platform
+- Met changes patch:
+	- 01:43 min --> Klopt wss niet;
+	- Optimized tree: -> 02:19
+	- 58 seconden? --> Dit is met eerste versie van tree? Hij applied alleen niet echt...
+- Oude situatie:
+	- Build: 04:24 min --> zonder changes.
+	- Build: 09:45 min --> Met alles in de oudste situatie
+- Build met 1ste tree implementation (nog met changes:) en command met local rabbit en Mongo.
+	- 6:22 minuten
+- Zelfde command maar zonder changes (oftewel develop):
+	- 4:26 min
+- Tree optimization?:
+	- 05:51 min
+-
+- IT test:
+	- With changes; 08:41 min; 10:08 min ; 07:16 min
+	- Without changes; 08:49 min;   08:51 min
+	-
+-
+- EPS refastercheck in IntelliJ:
+	- 1.24 met nieuwe stuff.
+	-
+- // 6:55 vs 6:10
+-
+-
+- ## Checken PSM-1299
+- Zonder shared-tools upgrade:
+	- 4:45 en 4:40 op PSM.
+- Met de shared tools upgrade:
+	- 03:40  en ... op PSM.
+- Normal build, verification.skip on PSM jvm changes
+	- 01:41.
+- Non JVM changes
+	- 01:33.
+-
+- ---
+- ### ULTIMATE CHECK (#1824 PR)
+	- PRP without PSM-1299
+		- 12:42 min
+		-
+	- PRP with PSM-1299 as is (no Refaster) ` mvn clean test-compile -Perror-prone`
+		- 12:12
+		- 12:06 min
+	- PRP with PSM-1299 with Refaster, but without PST upgrade. (`mvn clean test-compile -Ppatch,error-prone -Derror-prone.refaster.name-pattern='.*' -Dverification.skip -Dmaven.repo.local=/tmp/foobar`)
+		- 23:23 min (made many changes)
+		- 19:31 min (less changes)
+		- 11:27 min. (still changes)
+		- 08:21 min (no changes)
+		- 08:20 min (no changes)
+	- PRP with PSM-1299 with Refaster, and the PST upgrade. (same command as above)
+		- 07:06 min
+		- 07:04 min
+- BUILD:
+	- PRP with the faster shared-tools stuff. (`mvn clean install -Derror-prone.refaster.name-pattern='.*'` )
+		- 29:31 min (first run with closing laptop twice)
+		- 18:54 min
+		- 19:17 min
+	- With refaster:
+		- 24:48 min
+		- 25:26 min
+	- Wthout Refaster
+		- 19:01 min (Google Meet)
+		- 16:09 min
+		- 16:51 min
+	- Current develop (without the branch):
+		- 13:15min
+		- 15:05 min (Google Meet)
+- Opnieuw:
+	- 1299 full build:
+		- 16:35 min
+	- develop
+		- 13:52 min
+-
+-
+-
+- # Gesprek met Stephan 9 mei
+- If statement; ik descend in alle children waarvoor der een edge is in de CU set.
+- Else case;
+	- Alle edges in de boom gesorteerd zijn.
+	- Eerste element uit de edges, de CU.
+-
+- Sortedddd;
+- Set<S<STrings>> Die sorteer je.
+- Set van strings CU; sorteer.
+-
+- Geen aaanname over structuur van de code;
+- ReplaceTreeset with sortedset; misschien niet doen.
+-
+-
+- ## Gesprek 10 mei 16:45; voordat 'ie op vakantie gaat.
+- Sommige Refaster templates komen opzelfde punt in boom tevoorschijn; nu voer je ze wss meerdere keren uit.
+-
+- Kijken of je ze goed dedupliceert. Niet met regular equality. IdentityHashMap gebruiken.
+- RefasterTemplate in een list. RankingService kan niet duplicates hebben.
+- IdentityHashSet. Zou impact kunnen hebben.
+-
+- Voor iedere template, met meerdere beforetemplates, een nieuwe refastertemplate maakt, met 1 van de before templates en alle after templates gelijk. Kleinere Refaster templates. Die in de boom opslaat, branching is dan de branching van de Refaster anyOf. Dus nog steeds IdenttnityHashMap, als je match  hebt minder beforetemplates.
+-
+- IntelliJ wellicht, maven _opt; daar kun je hem aan toevoegen.
+- jfr file, dan JMC file inladen. In JMC custom profile maken; die sla je op in een file, die kan je meegeven.
+-
+- 3de) meer tokens toevoegen, 0, operators. Ifs en buts. Kan trager worden; als een 0 vaak in de sourcecode voorkomt, zelden template match. Dan kan het overhead geven.
+-
+- In EPS selftest, zonder test.
+-
+- classes in een Refastetemplate; kunnen we hem uberhaupt laden? Bepaalde classes die zeker moeten bestaan; zitten die uberhaupt op het classpath.
+-
+- Arrays.asList ; --> static method; ofwel --> nee is toch niks?
+	- ALS je de aanname maakt dat we geen wildcard imports gebruiken;
+	- Grotere boom; speciefieker matchen.
+-
+- Naam van method word mis sopgeslagen? en van variable?
+-
+-
+- ((627a447d-438c-42d2-9c9c-909ea798bd1a))
+-
+- https://github.com/google/truth/pull/806/files
+- Check whether it is on the classpath.
+-
+-
+-
+- Refaster --> Selector --> Default
+	- | -> Factory
+- Refaster has a dependency on
+-
+-
+- ## Meeting
+- Altijd inn de fork. de xml heeft gedeelte van error-prone-fork.
+- die heeft allebei.
+-
+- Altijd laden,
+-
+- Factory laad de fork variant.
+- Als jij test uitvoert, dat het altijd passed, error vangen, die niet te unit testen is, maar in buildtest, eerste keer hebben we fork niet van die module op de kclasspath.
+- De factory check dat.
+-
+-
+- Roep in een andere module de fast implementatie aan met reflectie.
+	- vang die error op
+	- Dan weet je wat je moet doen.
+	- Dat dan extracten naar een helper method.
+- En alsjeblieft, check met reflectie of iets public is of niet.
+-
+- # SPEED UP
+- 72b64100d2049e61df29b158cc7dd39714111630
+- 09c8dfd4113caccb3c0e91b8ba7b7e544d464e02

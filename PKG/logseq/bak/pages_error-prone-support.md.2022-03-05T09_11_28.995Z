@@ -1,0 +1,6 @@
+- [[AssertJ rewrites]]
+- [[RxJava to Reactor Migration]]
+-
+- Rewrites:
+	- `ReactorCollectionWrapper`, `.flux(...).next`-> `.mono`. ([link](https://github.com/PicnicSupermarket/picnic-platform/pull/8660#discussion_r811889761))
+	-

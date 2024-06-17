@@ -1,0 +1,4 @@
+- #Picnic #[[Vision JPLA]]
+-
+- https://hennyportman.wordpress.com/2020/05/25/review-team-topologies/
+- Amazing article from Victor Rentea

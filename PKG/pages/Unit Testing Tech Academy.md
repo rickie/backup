@@ -1,0 +1,254 @@
+- #Picnic
+-
+- When doing TDD, make sure that you have a failing test, focus on getting the test right.
+-
+- Name of the test, not too much details.
+	- Not: `return20_whenXX_andXXX`
+	- But: `returnsSumOfRolls`
+-
+- Try to not deviate from the requirements to much.
+-
+- ## TDD
+- Conclusions;
+	- A discipline
+	- Grow software in small increments (baby steps)
+	- Write tests before the implementation
+	- Simplest happy cases first.
+	- Feature slicing.
+	- Max 10 min/cycle. Too big of a thing that you test. Find a simpler test. Comment the test and started refactoring (for if it is a bit too hard).
+	- Don't add behavior for which you don't have a test.
+-
+- Write a test; before implementing it
+- Write simplest implementation
+- Not add behavior that is not foreseen.
+-
+- Coverage = there is a test going through that line;
+- We <3 Green tests.
+- **Evergreen tests**;
+- Coverage can be tricked.
+-
+- Mutation testing can fight this; break the production code --> get a "mutant" in the code.
+- True regression protection.
+-
+- ## Mocks
+- Outside-in TDD: we start top-level and we dig in by.
+- No logic yet timplemented.
+-
+- Use a small wrapper to prevent directly with annoying libraries like `LocalDate.now();`
+- Use a `TimeProvider` class wrapper that has a simple method `public LocalDate getCurrentDate()`
+- You can add `@Component` and it will then be provided to you.
+-
+- ## Day 1 conclusions;
+- Tests why: regression, courage, creativity, documentation,
+- **More focus design**! if fine-grained. Unit-testing level makes more sense to talk about api stuff and the design.
+- **More questions early**
+-
+- ### Coverage
+- (line/branch) can be misleading
+	- > between 60%-80%, 90%
+	- What do you test? If you are less than 100%. >> more on **THE DOMAIN**
+	- 100% coverage means 2-3x more test code than prod code)
+-
+- ### Mutation testing
+- Prove that a test is correct.
+-
+- ### TDD
+	- 1) Morning: Classic TDD (Chicago school). !!! there were no mocks ! and the API was crystal clear/fixed. Applicable Narrow responsibility, eg price algorithms or coupons.
+	- 2) noon: London TDD (Mockist style): there were mocks.  >> puts more pressure on internal design. "Fake it till you make it" : put mocks in place until you have the top-level clear. Applicable for: complex flow interacting with many external/deps. Harder but more applicable daily.
+	- WRITE THE TEST BEFORE THE IMPLEMEN. SEE IT RED. FIX. REFACTOR. > NEXT TEST.
+- # Day 2
+- Stub is when you teach a method to do something (what to respond); respond to method calls: when(mock.method()).thenReturn(...)
+- Mock, if we are able to ask an object, hey did anyone call the method.
+- Test Double; can cut out a dependency and we dont need to actually call it.
+-
+- **Dummy**; a mock that is not stubbed or verified.
+- **Fake:** alternative implementation for testing; common interface.
+- Make an interface such that we can easily test.
+- Data leaking.
+- Unlike TestNG, JUnit creates a new class for every test.
+-
+- ## Mocks
+- Command-Query Separation Principle
+	- return void; that's a command.
+	- return result; Query;
+-
+- Pure function;
+	- no fields changed
+	- output is determined based on the arguments. (based on the input)
+	- computations, without time and random.
+-
+- both stub and verify the same violates CQS principle (Command Quey Seperation))
+-
+- Heavy complexity.
+	- Functional core, pure functions.
+	- The **imperative shell**
+	- Dependencies and side-effects to the boudary
+-
+- Stubbed and verified is just BAD.
+	- Why do we stub stuff, if that method would return something in tested code.
+	- Violating CQS? Cut the method in 2.
+	- Instead of `changeStuff`, `change` and `compute`.
+-
+- Mock does anonymous subclass.
+-
+- ## Why do we use mocks
+- **Isolated Tests** from external systems => repeatable
+	- Alternatives:
+		- in-mem DB (H2)
+		- Test Containers
+		- WireMock
+		- CDC Tests
+- **Limit the scope**: do not test the whole world. Test less code, too many branches.
+- **Fast, in-memory**: nothing beats the speed of a Mock
+-
+- **Design Decoupling**:
+	- **Layers**;
+- Test **your** core logic using **your** domain objects (**your** language).
+-
+- ## Why bad
+- We practice to learn;
+- We mock everything; then we have too many.
+- "Mocking all dependencies of a class"; --> BAD
+	- Really hard to refactor code then.
+	- Inconsistencies in tests can cause problems in production.
+-
+- Refactor code such that it is easy to add the change request.
+- Then you co the **easy** change.
+- Excessive Mocking leads to:
+	- Fragile tests
+	- Inonsistencies
+	- Impossible Cases
+-
+- Inlining can also help if you rewrite an API.
+- Not testing stuff with DTO's in your domain. Then, mock the adapter out.
+-
+- Precise signatures; instead of `method(heavyObject)` -> `method(param1, param2)`
+- Make a record?
+- Ask yourself this.
+- PriceDetails; with something like 4 or 5 fields.
+-
+- The **more tests** you want to write on a piece of logic the **less mocking** you should involve.
+-
+- `ArgumentCapter.forClass(C.class);`
+- **Partial Mocks**: SameObject, Mock a method and test another method. **MISTAKE!**
+- Make method private and test through Public API.
+- Rule  in Unit testing, it is desirable to test **PUBLIC APIs**.
+- **Subcutaneous tests**; the needle underneath the scan and test wh
+-
+- Partial classes; Split classes;
+-
+- **Object Mother** is an anti-pattern in testing
+-
+- Fixture Creep; Scope Creep; on last day of the sprint, something else should be added! A new feature.
+- Creepy Object Mother;
+	- You use large data structures in your core logic that are:
+		- Immutable
+		- Enforce their internal state consistency.
+-
+- Moment you have 10 null fields in Immutable; what are you doing if you only need 7/17 fields.
+- Duplicate `Customer`; make it a `ShippingCustomer` and `BillingCustomer` as an option? Not really, just to give you and idea. Not always a good thing.
+- Why is it a shared object? Shouldn't it be separated?
+- Many tests for a method means that it does something interesting.
+- Functional Core / Imperative Shell
+-
+- Remove useless indirection; if method shrinks; you don't need it anymore, please delete the production then.
+-
+- Unit tests puts pressure on whereever there is complexity.
+-
+- @Before; hard to trace later what's used by one test.
+- `lenient()`
+- Multiple test classes per class can be an option. **Break the Testclass**
+- They can have their nice and shiny `Before` setups.
+-
+- Service; should contain a verb. Not an Entity; but an Action.
+- Nested fixtures; nested tests: `@Nested`
+- It reads like:
+	- Given a valid customer
+		- Send a welcome mail
+		- With a discounted country
+			- Receives coupon
+			- Is sent an email about the coupon
+-
+- Don't mock blindly; (Mock Roles not Objects)
+	- Mock something that makes sense.
+	- Think about the dependencies that you are going to mock. Not mock a service and a repo. The service should have the repo....
+	- Focus on SRP.
+-
+- More calls from tests > Better Signatures, Better Skills
+  background-color:: #533e7d
+-
+- Filebased blackbox test.
+-
+- # DAY 3
+- **Characterization testing**= "freeze" the behavior. Snapshot it. Capture the behavior. Adding tests for some working code. To make sure that you "catch" everything. For example when you want to do some changes.
+- **Approval testing** = you do the change in prod, then run test and copy the change to the test.
+-
+- Use Records instead of `arguments()`. Pass in structures.
+-
+- `stockProbe.assertWasSubscribed()` #error-prone-support
+- `assertThat(stockProbe.subscribeCount()).isEqualTo(1)`
+-
+- command shift enter. invoke statement and complete.
+-
+- Use more blocking to test your Reactive code.
+-
+- Here are two questions : #[[Stephan Questions / 2022-05]]
+- Are you using strictness?
+- MockingConfiguration setup from Victor. #PSM
+-
+- Naming of the test
+-
+- Publisher<Object> which is not Void -> ANTIPATTERN #error-prone-support
+-
+- `@InjectMocks`
+- Cleanup your tests in the same way.
+-
+- NestedClass with; GivenTrailerAndRunner;
+-
+- ## Why test naming different; `returnSomethingNiceToRadar_whenRunnerIsMissing`???
+- The end result, put that first, to get attention.
+- Make so clear what your test is about.
+- Relating to business requirements makes your test more stable.
+- BRIDGE THE GAP.
+- Test against stable interfaces or things.
+- Easier for people to understand what you are testing.
+- Also easier to visualize what the goal is.
+-
+-
+-
+- `DirtiesContext.MethodMode.AFTER_METHOD` --> Shall we staticimport? #error-prone-support
+-
+- TestProperties are bad, kind of, needs to restart Spring.
+-
+- `-ea -mx2g --noverify -XX:TieredStopAtLevel=1` to speed up #PSM
+- Slice Springboot tests tests #PSM
+- Is WebClientTest a slice test?
+- If not using REST, try to see @SPringBotTest(webEnvironment = NONE)
+-
+-
+- ^^single assert rule^^;
+	- should only do one assert (WRONG)
+	- It should only test one **aspect** of the behavior (CORRECT)
+	-
+	- What is ONE thing... it's hard. We test one go through the method, and check everything there is on the method.  (using softassertions).
+	- Not using softAssertions also stops half way. Now you would run them all with `softly`. You get better error message.
+	- Are good, shows you everything at once, Better for finding rootcause.
+-
+- Testing pitfalls;
+	- too many mocks
+	- mocking every dependency blindliy without thinking
+	- allow ing and testing STUPID methods in prod code.
+	- Oververification. when.then + verif() . PublisherProbe<not VOID> ??? #error-prone-support
+	- Mocking getters is a bad thing. is an extreme antipattern.
+		- Especially for immutable objects.
+		- Why did they do that? Implementing, saw has 20 fields.
+		- Slice down the objects...
+		- Now you have to mock the responses of 2 of the 20 fields.
+		-
+	-
+-
+-
+-
+-
+-
+- ## What is your general opinion on BeforeEach and stuff.

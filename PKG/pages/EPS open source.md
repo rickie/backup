@@ -1,0 +1,4 @@
+- https://teampicnic.slack.com/archives/C042PGEG8JK/p1664311032019149 -> Go through Isssues on Google were people ask about Refaster templates.
+-
+- https://github.com/picnicSupermarket/error-prone-support/compare/rossendrijver/assertj_template_improvements-part-2 --> Move ObjectEnuerableAssert
+-

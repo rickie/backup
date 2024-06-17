@@ -1,0 +1,2 @@
+-
+- Recommendation: try to design methods so that they handle 1 concern.

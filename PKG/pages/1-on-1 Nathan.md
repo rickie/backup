@@ -1,0 +1,57 @@
+- #Picnic
+-
+- Duidelijk
+-
+- Requirements op zetten.
+	- Engineering
+	- Grotere maken ook voor na EPS OSS-ing.
+-
+- Langere vakantie nemen begin Juli?
+- 3/4 weken.
+-
+- ### 8 December
+- Sommige mensen posten dan niks?
+- Soms kan ik niet echt publiek krijgen.
+-
+- Voel beter dat ik in m'n rol zit. Ook zo verantwoordelijkheid nemen?
+-
+-
+-
+- # Jan 17
+- Pattern match gedeelte;
+-
+- inductive thnking.
+- Actief aan denken.
+- Nathan er bij halen
+- Eric erbij betrekken.
+- Vragen stellen, hoe kom ik tot deze staat.
+-
+-
+- Standups;
+- Release; communiceren.
+- Blockers laten weten.
+-
+- Betere reporting in het algemeen;
+	- Concreter plan delen in stand-ups.
+	- Blockers communiceren, op het ticket en/of via een ping.
+	- Dingen zoals de release op tijd communiceren. Vooral als dit eventueel blocked is.
+-
+- Zorgen dat er geen fundamentele discussies komen in PRs. Probeer dit zo veel mogelijk te voorkomen.
+	- Tickets moeten zo duidelijk mogelijk zijn.
+	- Tickets kunnen kleiner om dit ook te voorkomen.
+-
+- Improve inductive thinking;
+	- Zelf meer doen.
+	- Voor (complexe) debug-sessie Nathan betrekken.
+	- Eventueel Eric betrekken.
+	- Stel de vraag; hoe kom ik tot deze staat en zo "terug" redeneren.
+-
+- https://en.wikipedia.org/wiki/Inductive_reasoning
+-
+-
+- Dit had ik nog als note van laatste keer;
+- Architectuur gedeelte. Hoe dat laten groeien, concrete dingen. Incidenten oppakken. Meer in de code duiken, wellicht samen met Nathan er in duiken.  Hoe zit het met het feit dat ik niet zoveel krijg om me daar in te bewijzen breder dan EPS? Aangezien ik daar wel de juiste dingen laat zien?
+-
+- # Feedback
+- Goed nadenken als je documentatie schrijft.
+- Zorg dat het ook duidelijk is voor iemand die niet in de context zit en als Python engineer of Junior Java engineer weet wat hij moet uitvoeren. Ga net die extra mile.

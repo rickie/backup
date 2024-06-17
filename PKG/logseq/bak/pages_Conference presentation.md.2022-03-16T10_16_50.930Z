@@ -1,0 +1,28 @@
+- Do we want to talk about these two different parts? Or not really? That we really _add_ functionality or is it more important to show that we _can_ use EP and Refaster for the automation.
+- What do we want to tell about validation?
+-
+- Can demo go in?
+- Is there room for questions afterwards?
+- Just to be sure: I _only_ need to do the recording right?
+-
+- ## The setup
+- Introduction
+	- What is the problem?
+	- What do we want to do?
+	- How?
+		- Consider suitability of EP and Refaster
+- Explain tools
+- We focus on a specific migration, RxJava to Reactor, two libs for reactive programming.
+- How does the migration work
+	- Compilable state
+	- Go from A to B
+	- Demo
+	- --- Show that we need MANY refaster templates
+		- switchIfEmpty weg. Maybe to Mono. ???? OF toch niet
+- Validation
+	- Two codebases
+	- What percentage do we rewrite?
+- Conclusion
+	- **Yes** we can use EP and Refaster
+	- We built a _framework_ such that you only need to write Refaster templates
+	-

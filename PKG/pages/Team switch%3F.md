@@ -1,0 +1,28 @@
+- #Picnic
+-
+- # Enric told me:
+- De manier waarop is niet goed, al in gesprek met target team???? Praten met target team of the move is not okay?
+- Switch kan niet zomaar, belangrijk onderdeel van Foundation. Moet door normale ding van staffing.
+- Of je gaat terug
+- Of je gaat in de pool en dan wss naar Supply chain
+- Of we maken een case voor Targeting
+- Krijg wel tijd voor EPS en Talks.
+-
+- # Reasoning;
+-
+- Forced to move; but like it.
+-
+- Want to
+-
+- Relatively new devs, picnic exprerience
+- The right person for Braze.
+-
+- Acquired knowledge of the tools
+-
+- Still a lot more to learn about product development instead of going back.
+-
+- Targeting is one of the few product teams that has products that work as a platform team. I can contribute here with my platform knowledge.
+-
+- Enric can maybe say something about how I fit in the team?
+-
+- Consumer domain over Supply chain.

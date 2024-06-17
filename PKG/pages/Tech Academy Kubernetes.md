@@ -1,0 +1,50 @@
+- Why Kubernetes?
+-
+- EKS is the Amazon implementation of Kubernetes.
+-
+- Live in container;
+	- container will be hosted inside **pod**.
+	- pod; one or more containers.
+-
+- Node; has private IP
+	- Which node the pod lives on.
+-
+- Storefront pod contains multiple ocntainers: `auth-proxy` and `logging` and `vault-auth`
+- Pod has an IP/hostname. Container will have specific ports.
+-
+- Multiple nodes, multiple machines where nodes can live on.
+- `kubectl describe pod <pod_id>`
+-
+- Clusters;
+	- Have it's own context.
+	- Like `de-dev` `nl-prod`.
+-
+- Deployments;
+	- Describe desired state in a declarative way.
+	- Can configure number of replicas
+	- Template for pods
+	- `kubectl get deployments`
+-
+- namespaces
+	- `kubectl get namepaces`
+	-
+- `kubectl get events` for events retrieval after a pod is already restarted for you.
+	-
+- Services;
+	- `selector`s are important for services.
+- Service types:
+	- ClusterIP
+	- NodePort
+	- LoadBalancer
+	- External name;
+-
+- `kubectl get service`
+	-
+- `kubectl apply -f .` to apply in the
+-
+- ## Vault
+	- Audit logging
+	-
+	-
+	-
+	-

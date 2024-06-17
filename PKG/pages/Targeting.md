@@ -1,0 +1,26 @@
+-
+- Woekdaaan.,
+-
+- Tips:
+	- People should leave the meeting if it is not interesting for them.
+	- Have more regular retros.
+	- Pick the person that goes after you with standups.
+	- Process around reviewing PRs.
+-
+-
+- Checkout PR to review, push changes.
+-
+-
+- Parabool setup.
+-
+-
+- # Learnings CD
+- What is going wrong?
+-
+- Finding out the problem.
+-
+- Renovate, upgrading. `addExecutionTimeWindow`.
+-
+-
+- Keep into account state.
+- Testing is hard. Component tests.

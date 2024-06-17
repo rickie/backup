@@ -1,0 +1,8 @@
+title:: Stephan Questions / 02-2022
+
+- D: Discuss the next steps for Pieter and Vitor
+- C: IsNullable example in EP
+- D: The progress for the test plugin.
+- D: Discuss `java.lang.Object` to `TypesWithUndefinedEquals`
+- Q: How far do you want to go with testing?
+- Q: How can I build two versions of (e.g.) EPS? Is there a smart thing to do?

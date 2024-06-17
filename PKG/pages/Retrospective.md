@@ -1,0 +1,4 @@
+- Make Stephan and Phil aware of guardian changes
+- Calendar invite
+- Reach out to tech Standup meeting.
+-

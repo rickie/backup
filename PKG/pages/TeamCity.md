@@ -1,0 +1,11 @@
+- Test page to execute whatever you want.
+-
+- `/home/teamcity/agent/work/43290g90v90/yarn-error.log` we need to print it, or attach it as artifact.
+-
+- # Tweak the maven args of a build!
+-
+- Go to the `PR Checks` and click the triple dot on the right of "Run" and go to "Parameters" tab.
+- There pass `env.MAVEN_CONFIG` and you can add additional flags!
+- The original one (as of Feb 2023) is: `-Pintegration-tests -Dsurefire.timeout=300 -Dfailsafe.timeout=300 -Dbuild.number=%build.number% -Drabbitmq.support-delays=false -s %teamcity.build.checkoutDir%/picnic-shared-tools/settings.xml -V`
+- You can now add `-U` there.
+-

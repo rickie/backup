@@ -1,0 +1,55 @@
+- Toppings
+	- Kruidenboter
+	- Ailoli
+	- Eiersalade
+-
+- ~~Bolletjes (45 stuks)~~
+- Stokbrood (15x)
+-
+- Salades
+	- Rundvlees
+	- Huzarensalade
+	- Aardappelsalade
+	- Pastasalade
+	- Groente salade (zelf maken?)
+		- Komkommer
+		- Tomaat
+		- Sla
+		- Saus
+	- Augurk
+-
+- Vlees
+	- Hamburgers
+	- Worstjes
+	- Kip
+-
+- BBQ
+	- Aanmaakblokjes
+	- Kolen (2 zakken?)
+	- Bordjes
+	- Bestek
+	- Bekers
+	- Vuilniszakken
+-
+- ~~Saus~~
+	- Knoflook
+	- Mayo
+	- Ketchup
+	- Curry
+	- BBQ Saus
+-
+- Drinken
+	- Cola
+	- Fanta
+	- Ice tea?
+	- Sparkling water?
+- ## Later
+- BBQ schoonmaken
+- @Rick Stokbroden
+- @Bren sla saus?
+- @Bren/@Simen Rietjes
+- Gold strike
+- Silver strike
+- Apfelkorn
+- Iets voor Daan die weggaat
+-

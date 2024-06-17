@@ -1,0 +1,233 @@
+title:: Stephan Questions / 2022-11
+
+- Dingen voor ThirdPartyLibrary;
+	- Naam beslissen
+	- Release?
+-
+- What do we want with Liam?
+	- Praten over wat we hebben gedaan met EPS
+	- Vragen of hij dingen interessant vind om te incorporaten
+		-
+	- Vragen over gebruik binnen Google
+		- Iets in kunnen schieten.
+-
+- Als Picnic hebben we plannen.
+	- Shit load aan issues inschieten.
+- Wat is er binnen google wat nog niet geopensourced is.
+	- Zijn er nog plannen?
+	- We willen geen overlap.
+- Is er een of ander Slack kanaal waar we contact kunnen hebben?
+- Tijdens Devoxx en tijdens JavaOne presentatie gegeven.
+	- Met Sander checken, is er feedback teruggekomen. Feedback gekomen? Dingen of er nog plannen zijn.
+	- We willen niet dubbel werk doen.
+	- Dingen adopten staat er open voor.
+-
+- CCen van John.
+-
+-
+- Zijn er nog dingen die we moeten afspreken voor mensen die dingen vragen via GH issues.
+-
+- # Website
+-
+-
+- Rebasen.
+- Docgen; documentation generation.
+- versies alleen in top level pom
+- XXX's oplossen.
+- Gemfile.lock weghalen of toevoegen? Voor reproducability wel doen.
+-
+- Stel dat je voor java gaat.
+-
+- Ruby linter.
+- Ruby static analysis?
+- ---
+- Meeting met Stephan en Gijs.
+-
+- ~~Willen we palantir weghalen.~~
+-
+- Validator#matchMethod.; `hasDirectAnnotationWithSimpleName` problem checken.
+- id:: 63637ea2-2596-4ea7-91dc-48b8da9e01c7
+-
+- `git ls-files '*.java' | xargs perl -0777 -pi -e 's/(class|interface|void)(.*\{\n)\n/\1\2/g'`
+-
+-
+-
+- `git ls-files '*.java' | xargs perl -0777 -pi -e 's/(private|public)(.*\(.*\).*\{\n)\n/\1\2/g' `
+- `git ls-files '*.java' | xargs perl -0777 -pi -e 's/(class|interface|void|implements|extends)(.*\{\n)\n/\1\2/g'`
+-
+- How to go about the `JUnitValueSource` code.
+-
+-
+- Gijs;
+	-
+-
+-
+- I wanted to personally reach out and introduce our GitHub Actions CI and test monitoring product [Foresight](https://github.com/marketplace/thundra-foresight).
+- Email Cushon.
+- Interfaces
+-
+-
+- `expectSubscription().verify{Complete,Error}()` can be simplified to the latter, right?
+	- Voor alle combinaties, met expect next. Hoeveel zijn het er. Anders checker.
+	- Iedere variatie nieuwe check schrijven. Best wat overloads. als ie iets van onVerifyNext enzo.ExpectSubscription, then drop expect subscription.
+	- emkele / meerder argumenten. satisfies enzo.
+	- Later moment, generaliseren.
+-
+- expectNext()....
+-
+- Wat betreft de @DEscription enzo.
+	- Default annotatie?
+	- Default description infeerred. Javadoc doen.
+	-
+-
+- TIMEZONEUSGAG IVAN
+- logger
+-
+- rossendrijver/bugs/unnecessary_parentheses_lambda_param
+-
+-
+- PR Template: #PR-template
+-
+- - Have you read the contribution guidelines
+	- Did you run the formatter
+	- Did you run the self check? `selfcheckcommand`
+-
+-
+- Phil's comment about all internal api endpoints should have a Swagger description. [link](https://github.com/PicnicSupermarket/picnic-store/pull/1890/files#r1027268157)
+- Interested in picking up ArchUnit stuff TBH.
+-
+- Will you do a explanation of EPS at some point?
+-
+- How to fix the stuff with the PIT in JUnitValueSource
+-
+- JDK 17 discussions.
+	- Roadmap; Java 17 support
+- TEst reproducability.
+- Meeer pressure.
+- `StringJoin`.
+-
+-
+-
+- Utility method (JUnitMatchers?). geven method surrounding class, target jdk. Is deze test compatabile with current runtime. and target? beide probably
+- Formatter
+- Tests for records.
+- Selfcheck both 11 and 17.
+- Java 11 unformatted file op met record. 11 doet niks en 17 format hem.
+-
+- Where should that like? Can I open PR? https://github.com/PicnicSupermarket/error-prone-support/pull/188/files#diff-69820dbb79912793ae40d126dc94d7ed35f08382fe57a8fa92d82ed3ba68d48bR207
+-
+- TODO open a PR for this [link]( https://github.com/PicnicSupermarket/error-prone-support/pull/188/files#diff-69820dbb79912793ae40d126dc94d7ed35f08382fe57a8fa92d82ed3ba68d48bR207).
+-
+-
+- ### After 25 Nov
+- ---
+- Discuss the "roadmap"
+	- Stuff really missing?
+	- Priority?
+-
+- https://github.com/JetBrains/intellij-plugins/pull/879#pullrequestreview-1193367500
+-
+-
+- https://picnic.atlassian.net/wiki/spaces/JPLA/pages/3932717109/Error+Prone+Support+information
+-
+-
+-
+- ## 9 Dec
+- Checkout how to do the actual updating of EP Fork :D
+- De release.
+- Naming algorithm, wllen we verplichten dat er een aftertemplate is?
+- en ook echt maar 1.
+- Zorgen dat die deterministsch is right? Alsin niet later nog kan veranderen.
+- Chamil buddy uitleggen.
+-
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/401#discussion_r1044395515
+-
+- Ik zie voor m'n gevoel beter in hoe de edge cases werken.
+-
+- Dingen gehaast / vs goed.
+-
+-
+- -Dversion =custom EPS version.
+- patch allowed niet voor override.
+- eps.version patch refaster. ppbv
+-
+-
+- # 14 december
+- https://github.com/google/error-prone/issues/3553 --> Willen wij dit doen voor de fork?
+- Already did it ;).
+-
+-
+- Hoe doe je die fork nou updaten?
+-
+-
+- Refaster rule naming; `MonoIdentity`, so only `mono` then add identity.
+-
+- kijk of parameters in de bytecode zittenl]
+- Inspecten en kijken of het `arg0` heet  of juist een meaningfull name.
+- zelf een mapping maken.
+- wat als we overload hebben met `(STring, int, String)`, be able to define a custom mapping for that
+-
+-
+- Berichtje naar Liam. Andere titel?
+- /TODO write something for Liam. Different title.
+-
+-
+-
+- https://github.com/PicnicSupermarket/picnic-store/pull/1902#discussion_r1045792770 -> sorting parameters. Value-scoped?
+	-
+-
+-
+- https://github.com/google/error-prone/issues/976 --> WIllen wij ook een `since` hebben ofzo.
+	- Als iets nog niet gerreleased is.
+	- NIet veel dingen deleten of renamen, renamen kan je oplossen met `altNames`.
+		- Website stuff altnames
+		- Refaster support dit nog niet.
+		- Structuur, altNames, alias maken. 302 serveert bijvoorbeeld.
+		- Custom pagina. voor dingen die niet bestaan.
+		- Deze versie of deze check is no longer supported. in versie maybe? Dit suggesten we nu.
+	-
+	- SInce:
+		- Meta data. NEXT
+		- Javadoc.
+		- git log --follow firstone, vind meest recente tag waar deze in zit; git based. Automatisch.
+		-
+	- Since feature:
+		- ```
+		  git log --pretty=format:"%h" --follow error-prone-contrib/src/main/java/tech/picnic/errorprone/bugpatterns/NestedOptionals.java | tail -n1 | xargs git tag --contains | grep -P 'v\d+\.\d+\.\d+' | head -n 1
+		  ```
+		-
+	-
+- Chamil ideeen.
+	-
+-
+- Bespreek roadmap things.
+-
+- Presentatie bespreken.
+-
+-
+- # 23 Dec
+- Shot op Loom.
+-
+-
+- Article op de EPS website.
+-
+-
+- Discuss EPS los van PSM.
+	- Fallback via Renovate
+	- Fallback via sharedtools?
+-
+- Gesprek
+	- PSM hou je bij.
+	- EPS heef weer versies.
+	- EP compatible. dat moet soms samen. Sereerialization ding.
+	- Mensen die handmatig dat gaan fixen?
+	- Miss SNAPSHOT releases doen om het makkelijker te maken voor onszelf.
+	- Is het valideren het probleem?
+	- ZIjn de changes het probleem?
+	- Vaker releasen? Makkelijker downstream testen kunnen ook dingen oplossen?
+- JLinkedIn bericht sturen.
+-
+-
+- Discuss opened PR.
+-

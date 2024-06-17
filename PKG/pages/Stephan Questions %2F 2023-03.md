@@ -1,0 +1,167 @@
+- Devoxx Poland.
+-
+- De Uber gasten hun ticket.
+-
+- Initial patch. Make a running build, output that as a diff.
+-
+- Bespreken BugPatterns die anders kunnen genoemd worden.
+-
+- Share bugpattern with Mockito itself?
+-
+- Hoe pakken we website branch op?
+	- Je noemt een andere structuur. ==> Met Pieter overleggen.
+- Hoe pakken we website gedeelte Refaster Rules op?
+-
+- OpenRewrite.
+	- Wat willen we doen?
+	- Dingen die we vinden?
+	- Roadmap...
+-
+- Gijs z'n werk. Plan met POM en PVA.
+-
+- Explain JDK 17 PR?
+-
+- ===
+- @Var niet nodig checken?
+- Anti var BugPattern maken.
+- Unchecked suppression weghalen. Kijken naar de resulting type and erasure, is it the same? Zoiets? Weet niet precies.
+-
+-
+-
+- ====
+- Vincent kwam langs.
+	- Wil helpen
+	- Over review queue.
+-
+- https://github.com/PicnicSupermarket/error-prone-support/pull/527
+	- MAtcher; is chainedmethodcall.
+	- Willen we dat.
+-
+- OpenRewrite tijd volgend kwartaal en voor reviewen.
+-
+- Release doen.
+-
+- Tag bestaat niet SLF4j
+- https://github.com/PicnicSupermarket/error-prone-support/pull/536
+-
+- Minen GH coments? overlap?
+-
+-
+- Checkstyle.
+-
+- ---
+- Next time:
+-
+- M'n~~review.~~
+- ~~Multi-JDK support~~
+-
+- ~~Review queue.~~
+-
+- ~~Copilot~~.
+-
+- https://github.com/PicnicSupermarket/error-prone-support/issues/557#issuecomment-1493975111
+- https://github.com/PicnicSupermarket/picnic-store/pull/2426
+-
+- ~~Goede vooorbeelden; collectormutability and FluxFlatMapUsage~~
+-
+-
+- Gijs:
+- - Reviewen wat code.
+	- Unchecked
+	- Toevoegen EPS test dingen.
+-
+-
+- static vs non-static check.
+- Logger?
+-
+- ~Empty line check fixer.~
+- Logger? Canonical logger
+- Member order.
+	- replace(Tree voor alles aanroepen.
+	- constructor, static fields, instance fields, methods.
+- Member whitespace.
+- Logger position.
+-
+- ### Message for review pool
+- sys-error-prone-reviewers
+- sys-error-prone-review-pool
+-
+- Hi all,
+-
+- I created a channel to propose a new review pool setup for Error Prone Support. Let me walk you through it.
+- Problem;
+- Currently we are receiving quite some contributions in Error Prone Support from various people, which is a really good thing. We want to encourage this as it positively impacts our development culture, code quality, and the level of automation we have. However, reviewing such PRs (especially BugPatterns) can take a lot of time. This can result in PRs not being reviewed for quite a while, which is not a good sign to our contributors. As a result, contributors may be less likely to contribute again.
+- Goals;
+- Our first goal is to improve the time to merge for such PRs, while keeping the same level of quality. The second goal is to increase the review capacity for EPS. In Error Prone Support we strive for a real high quality as rolling out a check can have a significant impact. We need to carefully consider edge cases and what the impact is other teams (or people outside of Picnic).
+  Additionally, Error Prone is our "business card" as it is open source, so we want to demonstrate our best development practices :).
+-
+- Approach;
+- The idea is that for open(ed) PRs you start reviewing just like you do for other PRs and point out as many improvements as possible, improving the quality. After that we will also review the comments and the PR. In the review we explain our reasoning behind changes, the approach, and the way of thinking, all with the goal to transfer knowledge to you. Making this a collaborative effort increases the review capacity and lowers the burden on Stephan and me.
+-
+- There are two topics to focus on when doing these kind of reviews.
+	- General code quality, best practices and the Picnic standard. Make sure the build is green. Making sure the code itself is up to our standard.
+	- Specific Error Prone or Error Prone Support things. This comprises things like (unwritten) rules/conventions related to either one of the projects, improvements related to quering the Abstract Syntax Tree (e.g. pointing out a method that simplifies the code), identifying other utility methods (from the Error Prone (Support) project)that are unknown to most contributors.
+	-
+- Especially the second point might be harder as there can be some knowledge gaps. The second point is what we want to make you grow in. In the beginning it will mostly mean that you
+-
+- In this channel we can communicate about the pull requests and have discussions about everything related to the reviewing. The approach is not carved in stone, so we can make tweaks as we go.
+-
+- What do you think about the approach?
+-
+- Benedak.
+- ~~https://github.com/search?type=code&auto_enroll=true&q=%2Fprivate+static+final+String+%5BA-Z_%5D*_ID%2F+path%3A**%2F*Test.java+owner%3APicnicSupermarket+~~
+-
+- ~~https://github.com/PicnicSupermarket/picnic-rule-engine/blob/d3e214aa1072940b8a589e4d3f54ce4280e5da01/rule-engine-rules/rule-engine-rules-api/src/test/java/tech/picnic/ruleengine/rules/api/RuleIdTest.java#L20~~
+-
+-
+- ## New
+-
+- Nullable ding aanroepen. Benedak vertelde
+-
+-
+- Twee dezelfde symbols. , niet mergen als het verschillende StepVerifiers zijn.
+- Instance method, De receiver hetzelfde.
+-
+- Opslaan in een StepVerifier en dan later nog doen wil je wss niet doen.
+-
+- 3 cases;
+	- 2 static methods;
+	- instance methods; symbols hetzelfde;
+	- instance methods, receiver ook weer method invocation is van dezelfde symbol. method symbol vs instance symbol.
+- static method argument collapsing. / merge.
+-
+- ZSM adopten van OpenRewrite.
+-
+- Bericht aan Kamill;
+	- Finishen as is, generalisatie maken, nog grotere generalisatie die ook de PR van Simon pakt.
+	- Uitleg dat wat hij eerst deed niet "goed genoeg was".
+-
+- OpenRewrite; file techhorizonsthing.
+-
+-
+- ---
+- Kamill
+-
+- Refaster rules reviewed.
+-
+	- record maken
+	- sink, empty arraylist; collect testcases.
+	- Geen scanner nodig. als je hem tegenkomt.
+	- doTest(). receiver is expressionTree; gegeven exprtree, welke klasse is ie aan het testen.
+		- receiver loop omhoog; dan weet je wat het is.
+		- class test teruggeeft. andere input output pairs eruit haalt. Recordm aken, lijst van records. Methode moet lijst returnen, Void method, als argument lijst waarin die dingen opslaat.
+		-
+-
+- Implementatie vraag;
+-
+-
+- ---
+- JDK 11 problemen
+-
+- https://github.com/PicnicSupermarket/picnic-store/pull/2549#discussion_r1189779950
+-
+- Data on usage of the website.
+-
+- What to add? Example Demo in the end.
+-
+-

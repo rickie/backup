@@ -1,0 +1,32 @@
+- [[Error Prone]]
+- [[error-prone-support]]
+- [[PSM]]
+- [[Commands]]
+- [[Stephan Questions]]
+-
+- [[Picnic - Meetings]]
+-
+- TODO:
+	- Update `error-prone-support` PSM-1177 branch with the new `IdentityConversion` and use it.
+	- JUnitMethodDeclaration check - don't change modifiers in abstract class.
+	- Move Refaster templates from Platform to EPS?
+	- https://github.com/PicnicSupermarket/picnic-stock-service/pull/639#discussion_r800466683
+	  Hoepelman: `.map(Optional::orElseThrow)` --> `.flatMap(Mono::justOrEmpty)`
+	  vergelijkbare regel; not functionaly equivalent. silently dropping element.
+	  > Is it the same for `filter(Optional::isPresent).map(Optional::get)` -> `flatMap(Mono::justOrEmpty)` ?
+	- BugPattern that does: assertThat(T).isEqualTo(null); -> assertThat(T).isNull();
+	  BugPattern that does: assertThat(optional.orElseThrow()).isEqualTo(value) -> assertThat(optional).hasValue(value);
+	  BugPattern: add open telemetry annotations where the annotation for new relic is already.
+-
+- Short term:
+	- Do feedback of Enric!
+	- Open PR on POM and a new one
+	- AbstractClass fix in JUnitMethodDeclCheck
+-
+- Git bisect vragen aan Bastien en Joao
+-
+- Checkout, checkout files.
+- vimdiff file file
+- `generate-resources` for subdirectory.
+-
+- Other:

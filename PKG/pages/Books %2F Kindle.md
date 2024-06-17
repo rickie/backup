@@ -1,0 +1,15 @@
+- Libgen.rs
+-
+- https://www.amazon.com/sendtokindle?ref_=pe_1825130_138612720
+-
+-
+- Miran from the hostel in Bosnia:
+	- Black soul
+	- At the gates of jahannam
+-
+- https://www.google.bg/books/edition/The_Programmer_s_Brain/9C89EAAAQBAJ?hl=en&gbpv=0
+-
+-
+- [Cultures and Organizations: Software of the Mind - Intercultural Cooperation and Its Importance for Survival *[*](https://libgen.rs/book/index.php?md5=AEB0A1705B81EBE8754B405114186E03)
+-
+- Typ "calibri"

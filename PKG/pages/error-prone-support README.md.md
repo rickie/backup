@@ -1,0 +1,6 @@
+- title:: error-prone-support README.md
+-
+- How to contribute?
+	- Add RefasterRule in right TemplateCollection.
+	- What is template collection.
+	- How to add tests?

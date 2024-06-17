@@ -1,0 +1,5 @@
+-
+-
+- build -Dmaven.build.cache.enabled=false -Dtest='!GitBranchWriterTest,!GitWriterConcurrencyTest,!GitWriterTest,!GitFetcherTest,!GitFileWriterTest' -Dsurefire.failIfNoSpecifiedTests=false
+-
+- -Dsurefire.failIfNoSpecifiedTests=false

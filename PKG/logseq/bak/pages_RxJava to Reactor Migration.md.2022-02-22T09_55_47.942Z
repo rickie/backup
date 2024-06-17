@@ -1,0 +1,5 @@
+- TODO:
+- - If method is already annotated with @Depreacted, then don't add it. When duplicating methods.
+-
+- Migration steps:
+	- 1. Checkout `rossendrijver/return_type`

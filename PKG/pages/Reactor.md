@@ -1,0 +1,268 @@
+- # Day 1
+- THE BOOK :D
+-
+- Simplicity
+	- Functional
+		- Functions first class citizens
+		- Immutable
+		- Higher order functions
+	- Libraries
+		- Operators that are provided.
+		-
+- Performance
+	- Async / Non-Blocking
+	- Push-Streaming
+-
+- Polling is not so performant.
+- Ping whenever data is ready.
+-
+- Where it **DOESN'T** work?
+	- CPU-bound stuff, so if it is CPU intensive
+	- Collection processing.
+-
+- Reactive is based on Observer Pattern.
+	- + Efficient Async Push
+- - Where is the end?
+	- How to Unsubscribe?
+	- Poor composition
+- Iterator (Iterables)
+	- - Ineffecient Sync Pull
+		- Poor composition
+		  	  + Clear where is the end
+		  	  + Can Unsubscribe
+	-
+- Reactive:
+	- Observer + Iterator = Rx
+		- Subscribre()
+		- cancel()
+		- onNext
+		- onError
+		- onComplete
+-
+- Mono
+	- onNext
+	- onComplete
+	- onError
+- Flux
+	- onComplete()
+	- onError()
+-
+- async, decoupled by time.
+-
+- `Mono<Void>` --- async library
+	- Void can only be:
+		- return null;
+		- throw new RuntimeException();
+	- That means `Mono<Void>` will be:
+		- Mono.empty()
+		- Mono.error(new RuntimeException())
+- `Mono<T>` --- async ordinary
+- `Mono<List<T>>` --- async batch (coupled in time _and_ from eachother)
+- `Flux<T>` --- async stream
+-
+- # Basics!
+- `defer()` only execute when subscribed to
+- **Marble diagrams**
+- RxFiddle
+- [RxMarbles](rxmarbles.com)
+-
+- Sink is something that you can "sent" downstream. Will be used downstream.
+-
+## Transformation
+- flatMap.
+-
+- transform -- create methods that  you can add to "decorate" a Flux. Transform adds transformations to a Flux.
+-
+- Create simple logical methods.
+- Have something like transform to extract some stuff.
+-
+- `.switchMap()` --> subscribed to one publisher at a time. Transparently,
+	- New configuration, then to the next publisher. Switching things, can do all that.
+-
+-
+-
+- # Day 2
+- ## Recap
+- Without subscribe nothing will happen.
+- Observer; handler `onNext` `onError` `onComplete`. Last two are terminal signals, get one of them only. `onError` -> error on datasource side.
+-
+- Reactive Manifesto
+	- Responsive
+	- Resilient
+	- Elastic
+	- Message Driven
+-
+- Backpressure was missing. Communicate met producer, let know how much you can consume.
+- ==> Reactive streams.
+- Rx Push model
+- Async Batch pull
+- Standard set of interfaces
+-
+- Project Reactor; Best tool for backend engineering.
+-
+- `.flatMap(list -> Flux.fromIterable(list))` -> `.flatMapIterable(Function.identity)` #error-prone-support
+-
+- Verify keyword is subscribing to your datasource.
+- You have to get the order completely **CORRECT** in order to have a **GOOD** StepVerifier.
+-
+- `expectNoEvent` --> make sure you have `expectSubscription` before that!!! #error-prone-support
+-
+- `VirtualTimeScheduler` can replace all the schedulers for the Mono and Flux'es in the JVM.
+	- It helps you testing all the fluxes and all the scenarios where you have timeouts, have to wait.
+	- Using `.then()` you can use a lambda to call `advanceTimeBy`.
+-
+- Always reset VirtualTimeScheduler, could be via `try-finally` #error-prone-support
+-
+- `TestPublisher` can be used to check e.g. your `RetryUtils.addFailureTolerance` to make sure you correctly configured your retry logic. The TestPublisher allows you to verify many other things.
+-
+- `PublisherProbe` part of the functionality that is inside `TestPublisher` limited because you cannot emit signals. However, you can assert about subscriptions and stuff.
+-
+- ## Combination
+- `merge`
+- `zip` --> will slow down if there is one stream that is slow.
+- `combineLatest()` --> it cashes the latest result from every stream. Use the `.distinct()` to make sure something will _not_ show twice.
+- `Schedulers.parallel()` divides the work over all schedulers in Round-Robin fashion.
+- `Mono.when` subscribes to all things and then waits until all of them are completed.
+- `materialize` -> in `zip` it makes something a `Mono<Signal<T>>` instead of `Mono<T>` to make sure the `zip` doesn't end too soon.
+- `firstWithSignal` also checks `onComplete` and `onError`, the `firstWithValue` leaves those out.
+- `Flux#using()` is useful for working with resources. It does things without (too much?) blocking. It's sort of equivalent `try-with-resources`.
+- `Flux#usingWhen()` you can do e.g. a database call. Define something to do on cancellation or error.
+-
+- ## Multithreading
+- Separate scheduler API is provided because the Java one is not good enough.
+- Schedulers:
+	- `.parallel()`
+	- `.single()`
+	- `.boundedElastic()`
+-
+- ## Parallelism Types
+- **Data Parallelism**: Dataset is shared between workers. No order guaranteed.
+-
+- **Tasks Parallelism**: Tasks are shared between workers, process same dataset. Result order is guarenteed.
+-
+- `.publishOn()` says, move it to another thread. publishOn has a queue inside it. So if it waits it does something else. Takes another element.
+- `.parallel(4)` --> DONT USE IT. Works quite confusing. Uses `publishOn` under the hood.
+- `.publishOn` will let us say where we want to publish it on, which thread / scheduler to use.
+-
+- `.subscribeOn` should be used "where signals are **generated**".
+	- Like `defer`, `fromCallable`.
+- `.publishOn` can only be used "where signals are **created**".
+	- Like `.map`.
+-
+- `thenReturn` calculates right away, before subscribe.
+  id:: 62737410-0d46-4efc-9b82-15c1e648b3dc
+- Secret agents story. `Flux.defer(() -> {})`. Do you calculate something/ read the message right away ? Or do you use `defer` to only open the message or do the calculation when it is actually useful to calculate. Only open when necessary.
+- Lazy evaluation with `Flux.defer()`.
+-
+- Flux is "nothing more than a builder".
+- Build a computation on data that could be inside Flux.
+-
+- ```java
+  final Flux<Integer> source = Flux.fromArray(); // here the array must be already
+  											   // in "memory"
+  
+  source
+  	.map(Function.identity()) // --
+      .filter (e -> true)       //   |
+      .filter (e -> false) 	  //   |>
+      .subsribe(); 			  //    		// Now the data will be "pulled out".
+  ```
+-
+- If test is blocking, wrap it in a `defer` and add `subscribeOn(Schedulers.<kan alles>)`.
+-
+- # Questions;
+- Crypte opdracht 1.  "Make Service Shared" what does that mean?
+- What is difference between `replay` and `cache`.
+- Flux as parameter.
+	- --> Publisher ; caveat you need to wrap in `Flux.from`
+	- --> Readability.
+	- --> Preference.
+- Why use `transform` a lot?
+-
+- `groupedFlux` ;  can buffer elements.
+-
+-
+- # Day 3 - Backpressure
+- `BaseSubscriber`: make your own subscriber. `Subscriber` is from Reactive Streams specification.
+-
+- Need `BackPressure` when: `Consumer` and `Producer` work independent.
+-
+- `prefetch` --> Queue inside operator. Probably have a thread boundary.
+-
+- `.flatMap(fn, concurrency, prefetch)`
+-
+- `Flux.interval` breaks if getting more elements. `OverFlow`.  Either drop the elements, or miss the interval.... Cannot be controlled by backpressure.
+-
+- `Duration` is nothing else then `Flux.interval(Duration.ofSeconds())` (in the context of the `.buffer` method? I think.)
+-
+- ## Does RxJava not have backpressure? It does ;). Sort of.
+- Default RxJava Observables. Flowable; has backpressure. Implementation Reactive stream publisher. Single may be, Observable does not have.
+- Mono is now combination of Maybe and Single.
+-
+- what was fix to get the typing of the lines of the pipeline?
+-
+- # Day 4
+- WHen want touse was subscribed instead of assert.
+-
+- You can "break the chain" if you stop using the original/"upstream" flux if you want to mock some of the method calls.
+-
+- `onErrorContinue` --> Just discards the errors and continues. Gives `onComplete` in the end.
+- The `sync` operators can be continued. IF there is an error or something that is wrong.
+-
+- **Cold publisher**: creates datasource for every new subscriber. It gets its own production engine. Starts from scratch. `Flux#create` is cold datasource. Doesn't share anything. `Flux#just` will get it's own subscription. Isolated;
+- **Hot publisher**: is datasource, type of `Flux` that can work independently of subscriber. Zero subscribers, but it still works. Data can be discarded. `externalService.messageStream().map(...)`. All data produced by datasource is gonna be dropped, if no subscriptions. When subscribe you can get the messages, otherwise not. So only portion of the data. Subscribers share the datasource with others.
+-
+- ## Cold to hot
+- `.publish()` --> publish it to multiple subscribers.
+-
+- `autoConnect` and `refCount`, can be used to have a minimum amount of subscribers.
+- Autoconnect makes sure it is subscribed, and it will keep it open.
+- Refcount, if there are 0 subscribers, everything will be disconnected. --> at least `minSubscribers` should be listening to it.
+- `replay` keeps history of messages and publishes all of them.
+- `.cache()` --> Is equal to `.replay(...).autoConnect()` #error-prone-support
+- `share()` --> equal to `.publish().refCount(1)` #error-prone-support
+-
+- ## Sinks
+- Sinks api is independent field. It is immutable. It can do many things for you, different behaviors.
+- `Sinks.many` and `Sinks.one` the latter is `Mono`. ALso `Sinks.empty` which only allows for `onComplete` or `onError`. Reduces number of outcomes again.
+-
+- When consumers are completely separate from producers. Kind of equal to RabbitMQ stuff.
+-
+- ## Observing / Debugging
+- Logging (`.log()`)
+- Metrics
+- Hooks.XXX (like `onComplete`, `onError` and stuff)
+-
+- Logging -> You can also add the `SignalType` which can tell you extra stuff.
+- `.metrics` can provide additional information about `onNext` (e.g.). Latency, number of requests.
+- When you need to know which Flux you are checking out; `.name("Name of flux")` that will be used inside metrics.
+- It also has `.tag("key", "value")` to add attributes (can be multiple). Added to metrics as well.
+- Hooks is a plugin API. Intercept different signals inside whole project Reactor.
+	- `Hooks.onEachOperator()`; decorate every `Flux` and `Mono`.
+	- E.g. `if (originalPUblisher instanceOf Flux) { Flux.from(originalPublish).log(Scannable.from(originalPublish.name()); ) }`
+-
+- `Hooks.onOperatorDebug();`
+-
+- `Mono.<Void>deferContextual(contextView)` access Reactor context.
+- ThreadLocal is threadsafety and local context (meta data).
+-
+- `ReactorDebugAgent.init()`
+- `.checkpoint("Checkpoint 1")` --> similar to log, but can add some things. The star means that it is in the root. On the root Flux.
+-
+-
+-
+-
+- ## Context
+- Reactor Context stands for:
+	- Thread safety
+	- Subscrbiercontext
+	- Local context (meta data)
+- FOr example;
+	- get user
+	- get authentication
+	- get name
+-
+- `.contextWrite(context -> context.put("key", "value));`
+- Context = Immutable.
+- `ContextView` is read-only. You can access it.
+-

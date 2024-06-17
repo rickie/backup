@@ -1,0 +1,240 @@
+- #Talks
+-
+- Culture -> Differenet types of people , about style and enforcing and stuff.
+- # Talk ideeen:
+- **Culture**, reviewing, tech focused, hiring process, onboarding.        Culture, reviewing, tech focused, hiring process, onboarding.        Uniformity and automation/Uniformity and **automation**
+-
+- Standardization;
+	- Pattern matchen.
+	- micro decisions; frictie; consistent.
+	- Dingen automatiseren, dan schalen.
+	- user persepectief, makkelijk onboarden. betere docs. testsetup.
+	- maintainable;
+-
+- ## Weet even niet waar dit moet:
+- Decision; niet meer over hebt. Code steeds uniformer; steeds makkelijker om te code te navigeren.
+- Cognitieve load;
+- Pattern matching animals; alles wat ervan afwijkt, stands out. Unexpected things, are things that you can focus on even more, where the complexity is, bugs and interesting parts.
+- Compounding effect; in EP +EPS; any individual check, 1x in de 2jaar of 1x in de maand afvangt, als je veel van dat soort dingen heb.
+- onboarding;
+	- iemand niet in andere stijl, in code review uitgepoint word, dat iemand iets schrijft of dt een tool zegt hey zo moet je het schrijvne; zo doen we dat hier.
+	-
+- cultuur;
+- Big book of Picnic; code review social process; laten we het zo doen; niet idereen leest PR. Centraal configureren; crowd sourcen.
+-
+- # Openfeedback.io
+- ## Picnic Meetup
+- Improved by:
+	- door je meer te focussen op je verhaal en minder op de slides
+	- A small cool demo would be very nice, like live updating a dependency, even if it is just for demo purposes.
+	- more about the experience of the teams using or not using these benefits
+-
+-
+- ## Generalized abstract?
+- Maintaining high-quality and uniform codebases poses significant challenges at scale, with technical debt, inconsistencies, and weak dependency management slip in too easily. This talk delves into how our dedicated Java Platform team tackles these challenges head-on!
+-
+- Our Java Platform empowers a community of over 300 developers with a robust suite of tools and shared libraries. Instead of reinventing the wheel, developers can use out-of-the-box libraries for logging, observability, and security, making it easy to follow guidelines and enforce best practices.
+-
+- We also harness the power of automation to achieve consistency and standardization with continuous enhancement. In this talk we will explain our tooling setup and practices. This includes our approach to shared libraries, centralized Maven configuration, developer tools, and CI/CD practices. Come and learn how Picnic's developers can build Java services with efficiency, quality, and confidence.
+-
+- ## Ander perspectief: (voor omgooien volgorde)
+- story over testng; je zit met grote codebase vast; what are you gonna do?
+- Developers op training sturen; nieuwe code , overhead; ga je bedrijf voor een maand stilleggen?
+- Boze product owner; foto.
+- Wat nou als.
+- interessant;
+-
+- Voorbeelden naar voren halen.
+-
+-
+- https://picnic.app/careers/becoming-a-multiplier-on-our-java-developer-platform
+-
+- Maven:
+	- enforcer
+	- dependencies
+	- versions
+	- Relaxed release.
+- Picnic-shared-tools
+-
+- Error Prone
+- Sonar?
+- GJF
+- Immutables;
+- Checkstyle --> GJF example [here](https://teampicnic.slack.com/archives/CTPLDMUG6/p1658479072397029).
+- Arch Unit
+- OpenRewrite SB3 upgrade.
+-
+- How can we deliver value?
+- Our core modules?
+- Confined tech stack; only Python Java.
+- Renovate, auto-merge.
+- Mutation testing?
+-
+- What is a Platform Team
+- Focus of a Platform Team
+- Tools - the git repo
+- Tools - Centralized Maven setup
+- Tools - Static analysis and automation
+-
+- ## Talk content
+- What is it? Motivation and goals.
+	- Picnic and our dev process
+		- Confined tech stack; idea behind this. Everything in house.
+		- We have X amount of teams that build Java products.
+		- Python --> analysts that use Python instead of GSheets.
+	- What is a platform team?
+		- What is our goal? --> Get from presentation.
+		- How can we create value? --> Triangle
+		- Openness; don't restrict to much.
+	- Why platform team?
+		- -- Slogan; provide tools to and guide devs creating value.
+		- High quality ; iedereen wil dit; maar hoe doe je dat... niet tijd om serieus tijd te besteden. Investeren met een platformteam, zo doen we dat. Gebruiken MF en infrastrcutreu voor de rest van Picnic.
+			- Tooling aspect en organisatie; als je 20 teams zegt jullie moeten dit gaan doen maar dat krijg je different aanpak; maar centralizeren zorg je dat de kwaliteit consistent en overal toegpast wrodt.
+			- Platform team; hype term; developer focused; devEx. engineering culture sturen.
+			- Multiplier factor
+				- Fixing things automatically
+				- Deps; merging; Renovate automerge. --> SB3 upgrade. x repos
+				- Renovate, automerge. getallen
+				- CI/CD
+				- We need to think about the things we add; we have a process for introducing new tools.
+			- Uniformity; lower overhead with learning APIs, minimize amount of libraries. Automatically migrate TestNG -> JUnit.
+				- onboarding
+				- people opening PRs in other teams.
+				- people switching teams.
+			- Help developers:
+				- Automation
+					- Lowering the amount of time spent during PRs
+					- bike shedding
+					- Upgrading to stuff for them.
+		-
+	- Common painpoints without platform team; but how we do that.
+	- Idea behind it.
+	-
+	- // meeste onderbrengen onder multiplier; automation is key; uniforme code makkelijker weer verder te verbeteren, minder cases; klein team momenteel. Code culture influencen. Alle checks; sommige controversieel / stylistisch. Ook door deze dingen te doen ter sprake brengt. Waar anders het niet boeit. Code kwali staat centraal.
+-
+- Enforcing best practices / high code quality
+	- Tools;
+		- Java; specific build tools and Java things. (voorbeelden / screenshots )
+			- Parent POM
+				- License
+				- Versions
+				- Dependencies
+				- Plugins
+				- Profiles
+				- Rules
+			- Enforcers; --> convergency example
+			- Maven deps;
+			- Our modules; with `XConfig.class` files that they can use or e.g. `@WebFluxAccessTest` annotations.
+				- observability
+				- loggings
+				- security
+			- Dingen die je niet wil doen als Devel-oper. Het wiel opnieuw uitvinden.
+			- WebFlux en WebMvc, we support both. Exception daargelaten, zelfde support hebben, logging tracing id prograpagation, security.
+			- Deps; we fix issues upstream already.
+		- Automation;
+			- Error Prone --> Demo
+			- OpenRewrite
+			- ArchUnit
+			- (contrib module part) mensen contributen.
+		- `picnic-java-all`
+		- Error Prone (Support)
+			- Some examples;  `Reactor#concatMap`, CollectorImmutability.(Non Reactor things plz)
+	- CI / CD not right here?
+	- Non Java; dev tools.
+		- CI/CD
+			- Secret scanner
+			- Patch
+			- Format
+			- Commit message
+			- Jira link?
+			- Renovate
+		- Spinnaker; pipelines opzet. Met harde CI en CD visualisatie krijgt van de pipeline. Selfservice autonomous.
+-
+- Filosofie; niet meeste logica in shared libs, testing downstream weten we vaak hoe het zit met upgraden voor teams.
+-
+- /// this to later?
+- Openness
+	- Others to contribute; `/contributions`
+	- Feel free to add stuff.
+	- Making others part of the discussions (poll).
+	- Not restricting, give devs autonomy.
+- Adoption
+	- Upgrade seamless;
+	- Beautiful grep command cannot fix.
+	- OpenRewrite
+	- Testing downstream
+-
+-
+-
+- // Mostly incorporated by now.
+- Java Developers Platform;
+	- What do developers need?
+	- How make update seamless as possible.
+	- Everyone should be up to date to make sure we only need to provide support for 2 versions.
+	- Getting others to contribute.
+	- We have a `/contributions` module where others can incorporate their modules.
+	- How decide to add new functionality?
+	- Success story of SB3 upgrade.
+	- How do we test?
+	- How did we do it with EPS?
+-
+- Open things:
+	- How do we measure success?
+	- How do we adopt such an "invasive" tool?
+	- @InlineMe
+	- Automation mindset.
+-
+-
+- # Empowering Picnic developers with the tools they need to build great products.
+- Every company fights the challenge to keep code quality high. This gets even more difficult when a company grows and has multiple teams working on a large codebase. There are many *different* coding standards, an inconsistent code quality and technical debt. Let alone the dependency hell and cross-team collaboartion. We at Picnic tackle these problems with our Java Platform team.
+-
+- Our Java Platform team that empowers over 300 developers with the tooling and reusable modules   that they can use. We want the developers to focus on what is important instead of considering/working on best practices around logging, security and exception handling and much more. This is all provided out of the box.
+- By leveraging automation to verkrijgen consistency and standardization, we are able to enforce best practices and autoamatically improve our codebase.
+- Standardization
+-
+- We will explain how we set up our tooling and our "platform" / shared modules. By going over Maven setup, developer tools like CI/CD and our Java specific tooling.
+-
+-
+- that has different teams it's hard to keep code quality at the top.  Every developer wants to write high quality code when developing new features.
+-
+- At Picnic, we have a Java Platform team that empowers over 300 developers with the tooling and reusable modules that they can use. As a result, developers do not need to reinvent the wheel and they can simply use out-of-the-box modules to quickly start building great products while automatically adhering to best practices.
+- Standardize things that developers don't want to spent time on; logging, metrics; exception handling;
+-
+-
+- Titles ChatGPT:
+- "Driving Code Quality at Picnic: Unleashing the Java Platform Power"
+- R: Driving Code Quality at Picnic: The power of a Java Platfom
+- Driving Code Quality: The Power of Picnic's Java Platform Team
+- Driving Code Quality: Unleashing the power of Picnic's Java Platform Team
+-
+- ChatGPT:
+- As companies expand and their codebases grow, maintaining high code quality becomes an ever-increasing challenge. The proliferation of multiple teams often results in different coding standards, inconsistent code quality, and accumulating technical debt. Overcoming the hurdles of dependency management and fostering effective cross-team collaboration can be daunting. At Picnic, we've addressed these challenges through the establishment of our dedicated Java Platform team.
+- Our Java Platform team empowers a community of over 300 developers with a suite of essential tooling and reusable modules. We're dedicated to freeing our developers to concentrate on what truly matters, rather than grappling with the intricacies of logging, security, and exception handling. These best practices are conveniently delivered out of the box.
+- Through a strategic embrace of automation, we've achieved the critical goals of consistency and standardization while significantly enhancing our codebase. Our talk will delve into the specifics of our tooling and the "platform" shared modules. We'll provide insights into our Maven setup, developer tools, CI/CD practices, and the Java-specific tooling we've harnessed to ensure that Picnic's developers can build products with efficiency, quality, and confidence.
+-
+- Improved?
+- As companies expand and their codebases grow, maintaining high code quality becomes an ever-increasing challenge. Having many teams often means many different coding standards, an inconsistent codebase, and accumulated technical debt. Additionally, there are challenges with dependency management and fostering effective cross-team collaboration. At Picnic, we've addressed these challenges through the establishment of our dedicated Java Platform Team.
+-
+- Our Java Platform Team empowers a community of over 300 developers with a comprehensive set of tools and shared libraries. We enable Product teams to operate autonomously and with minimal overhead such that they can focus on implementing new business features. Instead of reinventing the wheel for boring topics, they can use out-of-the-box libraries for logging, observability, and security that provide guidelines and enforce best practices.
+-
+- By leveraging automation, we've achieved the goals of consistency and standardization while continuously enhancing our codebase and guarding its quality. During this talk we will dive into the specifics of our tooling setup and our shared modules. For example, we'll discuss our Maven setup, developer tools, CI/CD practices, and the Java-specific tooling we've harnessed to ensure that Picnic's developers can build products with efficiency, quality, and confidence.
+-
+- Tussentsukkie;
+- freeing our developers to concentrate on what truly matters, rather than grappling with the intricacies of logging, security, and exception handling. These best practices are conveniently delivered out of the box.
+- Through a strategic embrace of automation, we've achieved the critical goals of consistency and standardization while continuously enhancing our codebase and guarding its quality. This talk will dive into the specifics of our tooling setup and our shared modules. This means that we'll discuss our Maven (parent) setup, developer tools, CI/CD practices, and the Java-specific tooling we've harnessed to ensure that Picnic's developers can build products with efficiency, quality, and confidence.
+-
+-
+- Stephan versie:
+- As companies expand and their codebases grow, the challenge of maintaining high code quality grows. With numerous teams, there comes a multitude of coding standards, resulting in an inconsistent codebase and the accumulation of technical debt. Additionally, addressing challenges related to dependency management and fostering effective cross-team collaboration becomes paramount. At Picnic, we've tackled these hurdles head-on through the establishment of our dedicated Java Platform Team.
+- Our Java Platform Team empowers a community of over 300 developers with a robust suite of tools and shared libraries. We empower product teams to operate autonomously, minimizing overhead, and enabling them to focus on implementing new business features. Instead of reinventing the wheel for mundane topics, developers can leverage out-of-the-box libraries for logging, observability, and security, providing guidelines and enforcing best practices.
+- By harnessing the power of automation, we've not only achieved consistency and standardization, but also continuously enhanced our codebase while safeguarding its quality. In this talk, we will delve into the specifics of our tooling setup and shared modules, including our Maven configuration, developer tools, CI/CD practices, and the Java-specific tooling we've embraced to ensure that Picnic's developers can build products with efficiency, quality, and confidence.
+-
+-
+-
+-
+- Our goal:
+- The Java Platform team enables Product teams to operate autonomously, 
+  with confidence and minimal overhead, by providing standardization, 
+  quality safeguards, up-to-date tooling, and process automation.
+  We support building a community where everyone can easily contribute to 
+  best practices, shared libraries and guidelines.

@@ -1,0 +1,103 @@
+title:: Stephan Questions / 2022-05
+
+-
+- ~~`String.format("foo")`... Rewrite if it doesn't have an %s in there?~~
+- Review the code, `rossendrijver/refaster-speed-up`
+-
+- ^^How are we ever going to rebase that PR. What is a good approach?^^
+	- Squash stuff?
+	- Go through the whole rebase? It's too much....
+		- **Just squash and try to rebase.**
+-
+- Can you please review the test setup PR. I really want to move forward with that, it would already save me time.
+-
+- ~~Go over the migration script.~~
+-
+- ## Feedback presentation
+- Feedback dat ik nerveus leek;
+- Extra dingen had toegevoegd.
+-
+- ## Feedback Refaster test setup
+- ~~Wrapping van docs readme.~~
+- ~~additionalSourceDirectories~~, basedirs; fmt-maven-plugin naar base level halen. `refaster-test-support/pom.xml`
+- `RefasterValidateTests` zo noemen we BugPatterns niet?
+- ~~Moeten die test templates niet in de source zitten?~~
+-
+- ## Feedback refaster-speed-up #Refaster-speed-up
+- ~~Node, moet `final` zijn.~~
+- ~~ImmutableSet.sortedCopyOf(identifiers); regel 336.~~
+- ~~Voor de "!" ook in treeKindToString~~
+- ~~Optional ipv emptystring. for treeKindToString, nullable retourneren private method.~~
+- .transformers(), is public, zou unwrap vaker kunnen doen?
+- ~~Node<> Immutable en immutable variant houden.~~
+- ~~AutoValue gebruiken. Is iets verbozer,~~
+- ~~Net als in originele code zijn er twee.~~
+- ~~XXX list is not complete.~~
+-
+- ~~Can I get access ?~~
+-
+-
+- How discuss?
+-
+- ~~RefastrTemplateTestCoverageCheck~~
+-
+- ~~3-way merge.~~
+-
+- Matching algorithm
+	- Node class, goede test coverage. ; idee; Picnic-store test die gaat over templateResolution; ids worden vervangen; recursive sequence. Verschillende trees bouwen; singleton tree, verschillende values; assertions maken; deze waarde komt niet voor inde boom; als dit wel voorkomt wil ik dit weer kgijen. Boom kan snel vaak; input waarde transofmratii.e
+-
+-
+- We moeten zorgen dat gewoon gemerged kan worden, vanaf daar kunnen we dan verder.
+	- Dus before templates splitten zou ik laten. Dit is al super goed.
+	- EN andere dingen ook...
+- ~~Branch protection rule for EPS, 2 approvals?~~
+-
+- Wat gaan we doen met de changes die nog upstream moeten voor de PR van Refaster speedup.
+-
+- Belangrijker; matching algoritme of 2.13?
+-
+- Crazy idea;
+- ---
+- ~~DummyTemplates --> splitten?~~
+-
+- ~~refaster-test-support , provided is wellicht niet correct. --> test.~~
+-
+- ~~validateTemplateCollectionTests-> moet heten zonder test cases.~~
+- ~~// XXX add comment about exaustive.~~
+- ~~gegeven .refaster files. die classes laad ik, dan heb je~~
+- ~~filteren op dat het in die package zit, dan check is exhaustive.~~
+- ~~XXX: Make JUnit extension to get the templates based on the context.~~
+-
+- Conceptueel gezien; improving algorithm;
+	- Deze logica; 120
+	- Kan het met vanilla EP.
+	- OBV flags, kunnen we de rules krijgen.
+	- t/m 178 is vanilla EP werkt allemaal. (2 methodes daar)
+	- Gegeven CUT returnen we een set van RefasterRules;
+		- standaard EP, kunnen we niet fancy stuff doen met de tree. Dan returnen we gewoon alles.
+		- anders, wel epic stuff. Wel tree gebruiken, doen we iets slimmers.
+	- Interface die gegeven de RefasterTemplates, in theorie, nieuwe interface retourneert die gegeven een  CUT en VistiroState een en ander toepast. (Nee dat zou ik niet eens doen).
+	- Een funtie van set van refastertemplates naar set van refastertemplates.
+		- Vanillageen transformatie
+		- anders is het een suset.
+- Tewee implementaties;
+-
+- Is compatible check; implementatie die werkt tegen de fork; moet ook tegen fork gebouwd worden.
+- Aparte maven module, waarin version.errorprone wordt overridden naar version.errorprone-picnic-x
+-
+- Die code moet naar aparte class.
+-
+-
+- ServiceLoading gebruiken;
+	- Aparte maven module met 2 implemenataties, IdentitifyTransformation.
+	- tweede, al die trees magic doet.
+- Twee implementaties van beide.
+-
+- ipv de set van refaster rules is het de node.
+- SelectCandidateRules is dan net iets anders. collect(RefasterRUlesjadadada.)
+- De node geef je aan de RefasterRuleSElector.
+- ServiceLoaden, twee implementaties op de classpath.
+	- wss moeten doen, interface toevoegen;
+-
+- Default1, andere 0; laagste belangrijk.
+-

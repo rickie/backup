@@ -1,0 +1,61 @@
+- `bridge-support`
+- `r2dbc-support`
+-
+- Release:
+	- Release notes generate
+		- Automatically add the PR link (#31)
+	- Jira script to do the actual release.
+	- find /home/rick/.m2/repostiryoy/ -nam "*-SNAPSHOT" | xargs rm -r
+	- GitHub token. Token from JIRA.
+	-
+	- https://picnic.atlassian.net/browse/PSM-509 --> Enric's PR get the nice changes out and put it in PSM.
+	- https://picnic.atlassian.net/browse/PSM-1304
+	- OWASP; maven plugin.
+	-
+	- Checklist:
+		- Most useful, minimal? That is required to? What is the most minimal, but most widely useful API change / design we can create?
+	-
+	-
+	- ~~STAR IMPORT THINGY; `module>avoidstarimport<`~~
+-
+- Ideas:
+	- Can we automatically retrieve which repos use which modules?
+		-
+-
+- # Validation release
+- Close `draft` validation PRs:
+- `gh search prs --author "@me" --draft --state open --json url --jq '.[].url' | xargs -I {} gh pr close --delete-branch "{}"`
+-
+-
+- Notes Ivan:
+	- Here is what I did to test the Spring Boot upgrade PR:
+	  1. Rebased PR on top of latest master;
+	  2. Set custom version in PSM to 40.0.0-sb-SNAPSHOT and built locally;
+	  3. In picnic-java-all replaced latest released version of PSM with 40.0.0-sb-SNAPSHOT;
+	  4. Used run-tests.sh to execute all tests in submodules with changes;
+-
+-
+-
+- mvn versions:set -DnewVersion=41.0.0-alpha-SNAPSHOT -DgenerateBackupPoms=false
+-
+- https://github.com/search?q=is%3Apr+is%3Aopen+%22DO+NOT+MERGE%22+author%3Arickie
+-
+- patch gerund
+- dingen aangepast met sed
+- --allow-empty
+-
+-
+- fca word geskipt
+- employee-access-mananger
+-
+-
+-
+- # PSM 41.0.0
+-
+- picnic-distribution ???
+- picnic-delivery-scenario-service
+- picnic-corona-testing
+- picnic-gtin-resolver
+- picnic-salesforce-bridge
+- picnic-payments
+-
