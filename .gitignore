@@ -1,0 +1,4 @@
+build-all.sh
+run-pr-mutation-tests.sh
+diff_stuff.sh
+**/run-helm.sh

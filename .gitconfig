@@ -1,0 +1,16 @@
+[core]
+	editor = vim
+	excludesfile = /home/rick/.gitignore
+	longpaths = true
+[user]
+	name = Rick Ossendrijver
+	email = rick.ossendrijver@gmail.com
+	signingkey = C4C02779
+[commit]
+	gpgSign = true
+[submodule]
+	recurse = false
+[push]
+	default = current
+[tag]
+	gpgSign = true

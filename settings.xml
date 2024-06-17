@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<settings xmlns="https://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>picnic</id>
+      <username>rossendrijver</username>
+      <password>l36kH8wv6A8t-LmLFb9d4RYPCjsoZlbs</password>
+    </server>
+    <server>
+      <id>picnic-releases</id>
+      <username>rossendrijver</username>
+      <password>l36kH8wv6A8t-LmLFb9d4RYPCjsoZlbs</password>
+    </server>
+    <server>
+      <id>picnic-snapshots</id>
+      <username>rossendrijver</username>
+      <password>l36kH8wv6A8t-LmLFb9d4RYPCjsoZlbs</password>
+    </server>
+    <server>
+      <id>github</id>
+      <username>rickie</username>
+      <password>0a1163b78d0bfd9e8ca4f9876a5b91d435d4d528</password>
+    </server>
+    <server>
+      <id>maven-build-cache</id>
+      <username>rossendrijver</username>
+      <password>l36kH8wv6A8t-LmLFb9d4RYPCjsoZlbs</password>
+    </server>
+  </servers>
+  <mirrors>
+    <mirror>
+      <id>picnic</id>
+      <mirrorOf>*,!jitpack</mirrorOf>
+      <url>https://nexus.global.picnicinternational.com/repository/maven-public</url>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+            <!-- The build defines an optional `error-prone-fork` profile using
+            which the code is built against a Picnic-managed fork of Error
+            Prone. This fork is hosted by Jitpack.io. See
+            https://jitpack.io/#PicnicSupermarket/error-prone. -->
+            <id>error-prone-fork</id>
+            <repositories>
+                <repository>
+                    <id>jitpack</id>
+                    <url>https://jitpack.io</url>
+                </repository>
+            </repositories>
+        </profile>
+    <profile>
+      <!--  When a mirror is configured (as we do above), Maven will not
+            resolve snapshot artifacts unless explicitly told to do so. The
+            purpose of this profile is to explicitly enable snapshot
+            resolution. httpsNote that the URLs defined here are effectively bogus,
+            as they are overridden by the mirror anyway. See
+            https://help.sonatype.com/repomanager2/maven-and-other-build-tools/apache-maven.  -->
+      <id>proxy-snapshots</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>maven.oracle.com</id>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>https://maven.oracle.com</url>
+          <layout>default</layout>
+        </repository>
+        <repository>
+          <id>picnic-snapshots</id>
+          <url>https://this-url-is-not-accessed-because-of-the-mirror-configuration-above</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>picnic-snapshots</id>
+          <url>https://this-url-is-not-accessed-because-of-the-mirror-configuration-above</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <sonar.organization>picnic-technologies</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+      </properties>
+    </profile>
+  </profiles>
+</settings>
